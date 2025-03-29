@@ -1,0 +1,136 @@
+[gd_scene load_steps=3 format=3 uid="uid://bhdff804umdo8"]
+
+[ext_resource type="Script" uid="uid://ccx12cjtdppww" path="res://UI/Scripts/Menu_Principal.gd" id="1_iq5l4"]
+[ext_resource type="Script" uid="uid://bvkmtlf1tf3ae" path="res://UI/Scripts/MenuDeOpciones.gd" id="2_i4iwo"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 1200.0
+offset_bottom = 620.0
+
+[node name="Menuprincipal" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 1200.0
+offset_bottom = 620.0
+script = ExtResource("1_iq5l4")
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menuprincipal"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -50.5
+offset_right = 123.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Comenzar" type="Button" parent="Menuprincipal/HBoxContainer"]
+layout_mode = 2
+text = "Comenzar"
+
+[node name="Opciones" type="Button" parent="Menuprincipal/HBoxContainer"]
+layout_mode = 2
+text = "Opciones
+"
+
+[node name="Salir" type="Button" parent="Menuprincipal/HBoxContainer"]
+layout_mode = 2
+text = "Salir
+"
+
+[node name="Salir" type="Panel" parent="Menuprincipal"]
+layout_mode = 0
+offset_top = 700.0
+offset_right = 1200.0
+offset_bottom = 1320.0
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Menuprincipal/Salir"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -50.5
+offset_right = 123.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Aceptar" type="Button" parent="Menuprincipal/Salir/HBoxContainer"]
+layout_mode = 2
+text = "Aceptar
+"
+
+[node name="Cancelar" type="Button" parent="Menuprincipal/Salir/HBoxContainer"]
+layout_mode = 2
+text = "Cancelar
+"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Menuprincipal/Salir"]
+custom_minimum_size = Vector2(600, 100)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -277.0
+offset_top = 123.0
+offset_right = 323.0
+offset_bottom = 251.0
+grow_horizontal = 2
+theme_override_font_sizes/normal_font_size = 66
+text = "¿Salir del juego?"
+
+[node name="Opciones" type="Control" parent="." node_paths=PackedStringArray("Camara")]
+anchors_preset = 0
+offset_left = 1200.0
+offset_right = 2400.0
+offset_bottom = 620.0
+script = ExtResource("2_i4iwo")
+Camara = NodePath("../Camera2D")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Opciones"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+offset_left = 418.0
+offset_top = 203.0
+offset_right = 794.0
+offset_bottom = 283.0
+text = "Opciones"
+
+[node name="HBoxContainer" type="VBoxContainer" parent="Opciones"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -123.5
+offset_top = -50.5
+offset_right = 123.5
+offset_bottom = 50.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Volver" type="Button" parent="Opciones/HBoxContainer"]
+layout_mode = 2
+text = "Volver"
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(600, 310)
+
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal" method="Comenzar_nivel"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal" method="Opciones"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal" method="SalirDelJuego"]
+[connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Aceptar" to="Menuprincipal" method="Salir_Aceptar"]
+[connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Cancelar" to="Menuprincipal" method="Salir_Cancelar"]
+[connection signal="button_up" from="Opciones/HBoxContainer/Volver" to="Opciones" method="Volver"]
