@@ -10,18 +10,18 @@
     "Type": "User",
     "GUID": "{106D5FE8-528F-4FCA-A239-91DBB0839698}",
     "Language": "SFX",
-    "Hash": "{9824E29B-5944-8E8F-1C8B-8F4280A4B1C3}",
+    "Hash": "{F345F395-A3DF-EFAD-51AF-427DC51D57B0}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\New_SoundBank",
     "ShortName": "New_SoundBank",
     "Path": "New_SoundBank.bnk",
     "Media": [
      {
-      "Id": "764283754",
+      "Id": "599916585",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "OPTIONS - CREDITOS.wav",
-      "CachePath": "B3/{B3AFB2AF-BCB2-7D27-1C74-0E9D15AB2389}.wem"
+      "ShortName": "Mouse_Sobre_Menu.wav",
+      "CachePath": "00/{00C2CE05-4346-9B07-7CD4-BA714A3155A9}.wem"
      }
     ],
     "Plugins": {
@@ -1331,13 +1331,39 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones",
       "GUID": "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}",
       "DurationType": "OneShot",
-      "DurationMin": "4.855306",
-      "DurationMax": "4.855306",
+      "DurationMin": "1.3416874",
+      "DurationMax": "1.3416874",
       "MediaRefs": [
        {
-        "Id": "764283754"
+        "Id": "599916585"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
        }
       ]
+     },
+     {
+      "Id": "1776444788",
+      "Name": "Play_Opciones",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones",
+      "GUID": "{7E1B7306-E954-49AE-81F1-AA5CE74E0E72}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
+     },
+     {
+      "Id": "2230670290",
+      "Name": "Play_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Start",
+      "GUID": "{08B57533-FC62-4B71-8F6C-902372BAFC6C}",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0"
      }
     ],
     "Busses": [
@@ -1353,9 +1379,24 @@
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
      }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "1031316333",
+      "Name": "Reverb_Menu",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+      "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2995775460"
+        }
+       ]
+      }
+     }
     ]
    }
   ],
-  "FileHash": "{7F949140-ADBB-E279-E5DF-0A9C01F2E8A9}"
+  "FileHash": "{DF3D5D42-B9CF-5F7E-3240-A6FF599777FC}"
  }
 }
