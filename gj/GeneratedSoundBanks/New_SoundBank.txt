@@ -1,9 +1,14 @@
 Event	ID	Name			Wwise Object Path	Notes
+	1776444788	Play_Opciones			\Default Work Unit\Play_Opciones	
+	2230670290	Play_Start			\Default Work Unit\Play_Start	
 	3236977634	Play_Mouse_Sobre_Opciones			\Default Work Unit\Play_Mouse_Sobre_Opciones	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
 	2607556080	Menu			\Default Work Unit\Master Audio Bus\Menu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+
+Auxiliary Bus	ID	Name			Wwise Object Path	Notes
+	1031316333	Reverb_Menu			\Default Work Unit\Master Audio Bus\Reverb_Menu	
 
 Effect plug-ins	ID	Name	Type				Notes
 	4496003	Dirty_Washing_Machine	Wwise RoomVerb			
@@ -170,5 +175,5 @@ Effect plug-ins	ID	Name	Type				Notes
 	4286906788	Gentle_Program_Compressor_Minus_20dB_RMS	Wwise Compressor			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	764283754	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\B3\{B3AFB2AF-BCB2-7D27-1C74-0E9D15AB2389}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		856572
+	599916585	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\00\{00C2CE05-4346-9B07-7CD4-BA714A3155A9}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		257700
 
