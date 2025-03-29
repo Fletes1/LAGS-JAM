@@ -1,0 +1,29 @@
+{
+ "ProjectInfo": {
+  "Project": {
+   "Name": "LAGS TEAM",
+   "GUID": "{EF955F8B-D75D-4DCD-B581-53222070BC3E}",
+   "Generator": "2024.1.1.8691"
+  },
+  "CacheRoot": "../../../../Wwise2022.1.11.8414/LAGS TEAM/.cache",
+  "Platforms": [
+   {
+    "Name": "Windows",
+    "GUID": "{416D3320-500A-4A2A-A229-2B2FB80B6E79}",
+    "BasePlatform": "Windows",
+    "BasePlatformGUID": "{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}",
+    "Path": "."
+   }
+  ],
+  "Languages": [
+   {
+    "Name": "English(US)",
+    "Id": "684519430",
+    "GUID": "{E53066A6-F7B6-4EE6-8907-16C682C8388C}",
+    "Default": "true",
+    "UseAsStandIn": "true"
+   }
+  ],
+  "FileHash": "{25C55D3B-139B-9137-0D15-AA90FA726326}"
+ }
+}
