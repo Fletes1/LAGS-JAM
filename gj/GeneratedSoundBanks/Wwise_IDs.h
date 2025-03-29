@@ -14,6 +14,8 @@ namespace AK
     namespace EVENTS
     {
         static const AkUniqueID PLAY_MOUSE_SOBRE_OPCIONES = 3236977634U;
+        static const AkUniqueID PLAY_OPCIONES = 1776444788U;
+        static const AkUniqueID PLAY_START = 2230670290U;
     } // namespace EVENTS
 
     namespace BANKS
@@ -27,6 +29,11 @@ namespace AK
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MENU = 2607556080U;
     } // namespace BUSSES
+
+    namespace AUX_BUSSES
+    {
+        static const AkUniqueID REVERB_MENU = 1031316333U;
+    } // namespace AUX_BUSSES
 
     namespace AUDIO_DEVICES
     {
