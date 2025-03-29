@@ -1,4 +1,4 @@
-[gd_resource type="WwiseProjectData" load_steps=19 format=3 uid="uid://bl5bqyfseool8"]
+[gd_resource type="WwiseProjectData" load_steps=24 format=3 uid="uid://bl5bqyfseool8"]
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dn5s6"]
 path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Acoustic_Banner"
@@ -109,17 +109,50 @@ name = "Factory Acoustic Textures"
 id = 2954047558
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_mqnyt"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus"
-type = 2
-name = "Master Audio Bus"
-guid = "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
-id = 3803692087
+path = "\\SoundBanks\\Default Work Unit\\New_SoundBank"
+type = 7
+name = "New_SoundBank"
+guid = "{106D5FE8-528F-4FCA-A239-91DBB0839698}"
+id = 4072029455
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_v560u"]
 children = [SubResource("WwiseTreeObject_mqnyt")]
 name = "Default Work Unit"
 id = 125608783
 
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_yyrou"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu"
+type = 2
+name = "Menu"
+guid = "{91005BF5-B15B-4107-9AF4-D49B36610317}"
+id = 2607556080
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_geu6g"]
+children = [SubResource("WwiseTreeObject_yyrou")]
+name = "Master Audio Bus"
+id = 3803692087
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
+children = [SubResource("WwiseTreeObject_geu6g")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_tnib1"]
+max_duration = 4.85531
+min_duration = 4.85531
+path = "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones"
+type = 3
+name = "Play_Mouse_Sobre_Opciones"
+guid = "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}"
+id = 3236977634
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
+children = [SubResource("WwiseTreeObjectEvent_tnib1")]
+name = "Default Work Unit"
+id = 125608783
+
 [resource]
 acoustic_texture_root = [SubResource("WwiseTreeObject_4djpx")]
-bus_root = [SubResource("WwiseTreeObject_v560u")]
+bus_root = [SubResource("WwiseTreeObject_5n8hf")]
+bank_root = [SubResource("WwiseTreeObject_v560u")]
+event_root = [SubResource("WwiseTreeObject_o7sea")]
