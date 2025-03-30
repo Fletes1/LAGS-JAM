@@ -4,7 +4,6 @@ extends Control
 #region 
 
 func Comenzar_nivel() -> void:
-	get_tree().change_scene_to_file("res://Escenas/nivel.tscn")
 	pass # Replace with function body.
 
 func Opciones() -> void:
