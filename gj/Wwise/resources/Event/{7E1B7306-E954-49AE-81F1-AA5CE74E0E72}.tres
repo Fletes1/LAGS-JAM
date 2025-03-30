@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://fqju410ci4fc"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Opciones"
+id = 1776444788
+guid = "{7E1B7306-E954-49AE-81F1-AA5CE74E0E72}"
+dummy = true

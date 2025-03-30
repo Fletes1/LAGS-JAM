@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://bhdff804umdo8"]
+[gd_scene load_steps=7 format=3 uid="uid://bhdff804umdo8"]
 
 [ext_resource type="Script" uid="uid://ccx12cjtdppww" path="res://UI/Scripts/Menu_Principal.gd" id="1_iq5l4"]
 [ext_resource type="Script" uid="uid://bvkmtlf1tf3ae" path="res://UI/Scripts/MenuDeOpciones.gd" id="2_i4iwo"]
 [ext_resource type="WwiseEvent" uid="uid://vnr1cl263rs8" path="res://Wwise/resources/Event/{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}.tres" id="2_rh3e6"]
+[ext_resource type="WwiseEvent" uid="uid://cu1f08re36vqc" path="res://Wwise/resources/Event/{C1C473D6-210B-492F-8444-74BFB4CD37C3}.tres" id="3_g3s20"]
 [ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="4_rh3e6"]
+[ext_resource type="WwiseEvent" uid="uid://cf1gb2eoe7fd" path="res://Wwise/resources/Event/{2CA7C4B1-B15F-4603-B790-B7A673CCB301}.tres" id="5_s2vxr"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -13,10 +15,10 @@ offset_bottom = 620.0
 
 [node name="Menuprincipal" type="Control" parent="."]
 anchors_preset = 0
-offset_left = 173.0
-offset_top = -6.0
-offset_right = 1373.0
-offset_bottom = 614.0
+offset_left = 24.0
+offset_top = 5.0
+offset_right = 1224.0
+offset_bottom = 625.0
 script = ExtResource("1_iq5l4")
 
 [node name="HBoxContainer" type="VBoxContainer" parent="Menuprincipal"]
@@ -49,6 +51,9 @@ text = "Opciones
 [node name="Cuando el jugador pone el mouse sobre" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Opciones"]
 event = ExtResource("2_rh3e6")
 
+[node name="AkEvent2D" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Opciones"]
+event = ExtResource("3_g3s20")
+
 [node name="Salir" type="Button" parent="Menuprincipal/HBoxContainer"]
 layout_mode = 2
 text = "Salir
@@ -56,6 +61,9 @@ text = "Salir
 
 [node name="Cuando el jugador pone el mouse sobre" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Salir"]
 event = ExtResource("2_rh3e6")
+
+[node name="AkEvent2D" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Salir"]
+event = ExtResource("3_g3s20")
 
 [node name="Salir" type="Panel" parent="Menuprincipal"]
 layout_mode = 0
@@ -138,6 +146,9 @@ alignment = 1
 layout_mode = 2
 text = "Volver"
 
+[node name="AkEvent2D" type="AkEvent2D" parent="Opciones/HBoxContainer/Volver"]
+event = ExtResource("5_s2vxr")
+
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(600, 310)
 
@@ -150,9 +161,12 @@ load_on = 2
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal" method="Comenzar_nivel"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal/HBoxContainer/Comenzar/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal" method="Opciones"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal/HBoxContainer/Opciones/AkEvent2D" method="post_event"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal/HBoxContainer/Opciones/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal" method="SalirDelJuego"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal/HBoxContainer/Salir/AkEvent2D" method="post_event"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal/HBoxContainer/Salir/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Aceptar" to="Menuprincipal" method="Salir_Aceptar"]
 [connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Cancelar" to="Menuprincipal" method="Salir_Cancelar"]
 [connection signal="button_up" from="Opciones/HBoxContainer/Volver" to="Opciones" method="Volver"]
+[connection signal="button_up" from="Opciones/HBoxContainer/Volver" to="Opciones/HBoxContainer/Volver/AkEvent2D" method="post_event"]

@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{426F35E0-EE73-4032-046E-5D6AE28C43BB}",
+    "Hash": "{8378E82D-33B1-F4B5-DBF3-B2F1A87E8F29}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
     "Media": [
+     {
+      "Id": "33259363",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Opciones_OFF.wav",
+      "CachePath": "1F/{1FAC7F86-AD2D-7EBA-A937-7F93926F93B0}.wem"
+     },
      {
       "Id": "599916585",
       "Language": "SFX",
@@ -32,12 +40,20 @@
       "CachePath": "3E/{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem"
      },
      {
-      "Id": "750135686",
+      "Id": "806244285",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
-      "ShortName": "CorazonRespiración_El jugador pierde una vida.wav",
-      "CachePath": "33/{3317F189-26F6-2C7F-8ACC-1B3DAB67188A}.wem"
+      "ShortName": "Mouse_Sobre_Menu-002.wav",
+      "CachePath": "E6/{E6CF758E-742C-E9C4-8F3F-098871A14785}.wem"
+     },
+     {
+      "Id": "1069516321",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mouse_Sobre_Menu-001.wav",
+      "CachePath": "20/{2059C9F6-D2AF-7035-DDEC-35D8C64C462B}.wem"
      }
     ],
     "Plugins": {
@@ -59,8 +75,8 @@
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones",
       "GUID": "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}",
       "DurationType": "OneShot",
-      "DurationMin": "1.3416874",
-      "DurationMax": "1.3416874",
+      "DurationMin": "1.3034922",
+      "DurationMax": "1.401089",
       "MediaRefs": [
        {
         "Id": "599916585"
@@ -76,16 +92,64 @@
       ]
      },
      {
-      "Id": "1776444788",
-      "Name": "Play_Opciones",
-      "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones",
-      "GUID": "{7E1B7306-E954-49AE-81F1-AA5CE74E0E72}",
+      "Id": "4057716190",
+      "Name": "Play_Opciones_IN",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones_IN",
+      "GUID": "{C1C473D6-210B-492F-8444-74BFB4CD37C3}",
       "DurationType": "OneShot",
-      "DurationMin": "6.549875",
-      "DurationMax": "6.549875",
+      "DurationMin": "0.9025625",
+      "DurationMax": "0.96489584",
       "MediaRefs": [
        {
-        "Id": "750135686"
+        "Id": "33259363"
+       },
+       {
+        "Id": "599916585"
+       },
+       {
+        "Id": "806244285"
+       },
+       {
+        "Id": "1069516321"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
+       }
+      ]
+     },
+     {
+      "Id": "1931507818",
+      "Name": "Play_Opciones_OFF",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones_OFF",
+      "GUID": "{2CA7C4B1-B15F-4603-B790-B7A673CCB301}",
+      "DurationType": "OneShot",
+      "DurationMin": "0.95760417",
+      "DurationMax": "0.95760417",
+      "MediaRefs": [
+       {
+        "Id": "33259363"
+       },
+       {
+        "Id": "599916585"
+       },
+       {
+        "Id": "806244285"
+       },
+       {
+        "Id": "1069516321"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
        }
       ]
      },
@@ -135,6 +199,6 @@
     ]
    }
   ],
-  "FileHash": "{979909AB-0AAA-3561-F061-5ACBB100056B}"
+  "FileHash": "{BAE18CE2-504A-E1EF-2C27-29EE7490B944}"
  }
 }
