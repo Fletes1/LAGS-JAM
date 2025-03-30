@@ -1,0 +1,140 @@
+{
+ "SoundBanksInfo": {
+  "Platform": "Windows",
+  "BasePlatform": "Windows",
+  "SchemaVersion": "16",
+  "SoundBankVersion": "154",
+  "SoundBanks": [
+   {
+    "Id": "3469643768",
+    "Type": "User",
+    "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
+    "Language": "SFX",
+    "Hash": "{426F35E0-EE73-4032-046E-5D6AE28C43BB}",
+    "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
+    "ShortName": "Primer_SB",
+    "Path": "Primer_SB.bnk",
+    "Media": [
+     {
+      "Id": "599916585",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Mouse_Sobre_Menu.wav",
+      "CachePath": "F4/{F4DDDB4A-D18A-53E1-4716-4F9D4B993B6F}.wem"
+     },
+     {
+      "Id": "646408947",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CorazónRespiración_Le queda una vida al jugador.wav",
+      "CachePath": "3E/{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem"
+     },
+     {
+      "Id": "750135686",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "CorazonRespiración_El jugador pierde una vida.wav",
+      "CachePath": "33/{3317F189-26F6-2C7F-8ACC-1B3DAB67188A}.wem"
+     }
+    ],
+    "Plugins": {
+     "ShareSets": [
+      {
+       "Id": "2995775460",
+       "Name": "Room_Small",
+       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Rooms\\Room_Small",
+       "GUID": "{577F1466-A63B-47F7-98BD-C56E433F8B5D}",
+       "LibName": "Wwise RoomVerb",
+       "LibId": "7733251"
+      }
+     ]
+    },
+    "Events": [
+     {
+      "Id": "3236977634",
+      "Name": "Play_Mouse_Sobre_Opciones",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones",
+      "GUID": "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3416874",
+      "DurationMax": "1.3416874",
+      "MediaRefs": [
+       {
+        "Id": "599916585"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
+       }
+      ]
+     },
+     {
+      "Id": "1776444788",
+      "Name": "Play_Opciones",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones",
+      "GUID": "{7E1B7306-E954-49AE-81F1-AA5CE74E0E72}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.549875",
+      "DurationMax": "6.549875",
+      "MediaRefs": [
+       {
+        "Id": "750135686"
+       }
+      ]
+     },
+     {
+      "Id": "2230670290",
+      "Name": "Play_Start",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Start",
+      "GUID": "{08B57533-FC62-4B71-8F6C-902372BAFC6C}",
+      "DurationType": "OneShot",
+      "DurationMin": "6.690229",
+      "DurationMax": "6.690229",
+      "MediaRefs": [
+       {
+        "Id": "646408947"
+       }
+      ]
+     }
+    ],
+    "Busses": [
+     {
+      "Id": "2607556080",
+      "Name": "Menu",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu",
+      "GUID": "{91005BF5-B15B-4107-9AF4-D49B36610317}"
+     },
+     {
+      "Id": "3803692087",
+      "Name": "Master Audio Bus",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
+      "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
+     }
+    ],
+    "AuxBusses": [
+     {
+      "Id": "1031316333",
+      "Name": "Reverb_Menu",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+      "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}",
+      "PluginRefs": {
+       "ShareSets": [
+        {
+         "Id": "2995775460"
+        }
+       ]
+      }
+     }
+    ]
+   }
+  ],
+  "FileHash": "{979909AB-0AAA-3561-F061-5ACBB100056B}"
+ }
+}

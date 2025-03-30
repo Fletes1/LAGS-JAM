@@ -6,11 +6,11 @@
    "Generator": "2024.1.1.8691"
   },
   "RootPaths": {
-   "ProjectRoot": "../../../../Wwise2022.1.11.8414/LAGS TEAM",
-   "SourceFilesRoot": "../../../../Wwise2022.1.11.8414/LAGS TEAM/.cache",
+   "ProjectRoot": "../../../../../Wwise2022.1.11.8414/LAGS TEAM",
+   "SourceFilesRoot": "../../../../../Wwise2022.1.11.8414/LAGS TEAM/.cache",
    "SoundBanksRoot": ".",
    "ExternalSourcesInputFile": "",
-   "ExternalSourcesOutputRoot": "../../../../Wwise2022.1.11.8414/LAGS TEAM/GeneratedSoundBanks/Windows"
+   "ExternalSourcesOutputRoot": "../../../../../Wwise2022.1.11.8414/LAGS TEAM/GeneratedSoundBanks/Windows"
   },
   "DefaultAlign": "16",
   "Settings": {
@@ -33,6 +33,6 @@
    "PrintObjectPath": "true",
    "PrintObjectColor": "true"
   },
-  "FileHash": "{E9D0F807-A6EF-1AAD-9464-A3C220375C4C}"
+  "FileHash": "{C569EA16-63C1-7800-329C-19DDB7D769FE}"
  }
 }

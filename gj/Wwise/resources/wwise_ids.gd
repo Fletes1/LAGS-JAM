@@ -1,7 +1,10 @@
 class_name AK
 
 class EVENTS:
-	pass
+
+	const PLAY_MOUSE_SOBRE_OPCIONES : int = 3236977634
+	const PLAY_OPCIONES : int = 1776444788
+	const PLAY_START : int = 2230670290
 
 class STATES:
 	pass
@@ -16,10 +19,12 @@ class TRIGGERS:
 	pass
 
 class BANKS:
-	pass
+
+	const PRIMER_SB : int = 3469643768
 
 class AUX_BUSSES:
-	pass
+
+	const REVERB_MENU : int = 1031316333
 
 class ACOUSTIC_TEXTURES:
 
