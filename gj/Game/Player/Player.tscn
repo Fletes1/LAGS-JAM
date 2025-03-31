@@ -1,0 +1,58 @@
+[gd_scene load_steps=8 format=3 uid="uid://cvx2d0nsis120"]
+
+[ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
+[ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
+[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/PS_Normal.gd" id="3_fd82q"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_deoc1"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e0wbv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fd82q"]
+albedo_color = Color(1, 0.188235, 0.145098, 1)
+
+[sub_resource type="SphereMesh" id="SphereMesh_fd82q"]
+material = SubResource("StandardMaterial3D_fd82q")
+radius = 0.1
+height = 0.2
+radial_segments = 6
+rings = 4
+
+[node name="Player" type="CharacterBody3D"]
+script = ExtResource("1_fd82q")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_deoc1")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_e0wbv")
+
+[node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
+script = ExtResource("2_fd82q")
+initial_state = NodePath("State")
+
+[node name="State" type="Node" parent="FSM_Movement"]
+script = ExtResource("3_fd82q")
+metadata/_custom_type_script = "uid://dxqd1vrwtyagt"
+
+[node name="Pivot" type="Node3D" parent="."]
+
+[node name="Node3D" type="Node3D" parent="Pivot"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+
+[node name="Torque" type="Node3D" parent="Pivot/Node3D"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 0)
+
+[node name="Camera3D" type="Camera3D" parent="Pivot/Node3D/Torque"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 1.86265e-09, -2.98023e-08, 1, 0, 0, 0)
+fov = 13.1
+size = 11.476
+
+[node name="Puntero" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40213)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Puntero"]
+mesh = SubResource("SphereMesh_fd82q")
+
+[connection signal="MouseInp" from="FSM_Movement/State" to="." method="_on_state_mouse_inp"]
+[connection signal="MouseSus" from="FSM_Movement/State" to="." method="_on_state_mouse_sus"]
