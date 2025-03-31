@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{8378E82D-33B1-F4B5-DBF3-B2F1A87E8F29}",
+    "Hash": "{D0E4034B-339E-D673-7173-82DAA3DA1F62}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
@@ -21,7 +21,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Opciones_OFF.wav",
-      "CachePath": "1F/{1FAC7F86-AD2D-7EBA-A937-7F93926F93B0}.wem"
+      "CachePath": "FF/{FFE9A2DF-E28B-FE48-6398-23BE94FCD927}.wem"
      },
      {
       "Id": "599916585",
@@ -45,7 +45,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mouse_Sobre_Menu-002.wav",
-      "CachePath": "E6/{E6CF758E-742C-E9C4-8F3F-098871A14785}.wem"
+      "CachePath": "48/{482DE07A-3128-6859-D45F-FC50494971E5}.wem"
      },
      {
       "Id": "1069516321",
@@ -53,7 +53,7 @@
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Mouse_Sobre_Menu-001.wav",
-      "CachePath": "20/{2059C9F6-D2AF-7035-DDEC-35D8C64C462B}.wem"
+      "CachePath": "FA/{FA19C0CB-0CA7-A51D-F16C-1680112148DE}.wem"
      }
     ],
     "Plugins": {
@@ -199,6 +199,6 @@
     ]
    }
   ],
-  "FileHash": "{BAE18CE2-504A-E1EF-2C27-29EE7490B944}"
+  "FileHash": "{A2A5CEAA-A24A-E0D9-4828-1B85114DE64E}"
  }
 }

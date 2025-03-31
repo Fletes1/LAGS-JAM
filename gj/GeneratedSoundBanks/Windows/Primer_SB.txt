@@ -15,9 +15,9 @@ Effect plug-ins	ID	Name	Type				Notes
 	2995775460	Room_Small	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	33259363	Opciones_OFF	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\1F\{1FAC7F86-AD2D-7EBA-A937-7F93926F93B0}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_OFF		183956
+	33259363	Opciones_OFF	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FF\{FFE9A2DF-E28B-FE48-6398-23BE94FCD927}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_OFF		183956
 	599916585	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\F4\{F4DDDB4A-D18A-53E1-4716-4F9D4B993B6F}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		257700
 	646408947	Start	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\3E\{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem		\Actor-Mixer Hierarchy\MENU\Start		1284620
-	806244285	Opciones_IN-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\E6\{E6CF758E-742C-E9C4-8F3F-098871A14785}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-002		185356
-	1069516321	Opciones_IN-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\20\{2059C9F6-D2AF-7035-DDEC-35D8C64C462B}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-001		173388
+	806244285	Opciones_IN-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\48\{482DE07A-3128-6859-D45F-FC50494971E5}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-002		185356
+	1069516321	Opciones_IN-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FA\{FA19C0CB-0CA7-A51D-F16C-1680112148DE}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-001		173388
 
