@@ -15,17 +15,13 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
-	2460606139	Espacial			\Default Work Unit\Master Audio Bus\Espacial	
 	2607556080	Menu			\Default Work Unit\Master Audio Bus\Menu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
-	4095160060	Ambiente			\Default Work Unit\Master Audio Bus\Ambiente	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1031316333	Reverb_Menu			\Default Work Unit\Master Audio Bus\Reverb_Menu	
-	1182336810	Catacumba			\Default Work Unit\Master Audio Bus\Catacumba	
 
 Effect plug-ins	ID	Name	Type				Notes
-	415841907	Space_Garage	Wwise RoomVerb			
 	2995775460	Room_Small	Wwise RoomVerb			
 
 Audio Devices	ID	Name	Type				Notes
