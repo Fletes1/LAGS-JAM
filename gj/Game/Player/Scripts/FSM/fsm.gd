@@ -25,6 +25,7 @@ func physics_update(_delta: float) -> void:
 	if current_state:
 		current_state.physics_update(_delta);
 	pass
+
 func _on_child_transition(state:State,new_state_name:String):
 	if state != current_state:
 		return

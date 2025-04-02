@@ -79,6 +79,9 @@ transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.79
 [node name="Player" parent="." instance=ExtResource("10_lmntw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29801, 0.999999, 2.88978)
 
+[node name="Camera3D" parent="Player/Cursor/Pivot/Torque" index="0"]
+transform = Transform3D(1, 0, -1.86265e-09, 0, 1, 0, 1.86265e-09, 0, 1, 0, 0, 0)
+
 [node name="Emvironment" type="Node" parent="."]
 
 [node name="ParaCaminar" type="MeshInstance3D" parent="Emvironment"]
@@ -181,5 +184,8 @@ transform = Transform3D(0.999262, 0, -0.0384227, 0, 1, 0, 0.0384227, 0, 0.999262
 [node name="Enemy" parent="." instance=ExtResource("12_2frcr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 metadata/_edit_group_ = true
+
+[node name="Prueba" type="Camera3D" parent="."]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.86013, 4.19672, 4.47804)
 
 [editable path="Player"]

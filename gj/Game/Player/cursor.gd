@@ -39,12 +39,12 @@ func createRay():
 	var intersection = space_state.intersect_ray(query)
 	return intersection
 
-func _on_state_mouse_inp() -> void:
+func _on_mouse_inp() -> void:
 	if _object.is_in_group("Objetos"):
 		_object.emit_signal("whiplashed",position)
 	pass # Replace with function body.
 
-func _on_state_mouse_sus():
+func _on_mouse_sus():
 	if _object.is_in_group("Objetos"):
 		if !objHook:
 			objHook=_object

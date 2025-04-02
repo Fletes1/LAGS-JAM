@@ -1,10 +1,15 @@
-[gd_scene load_steps=10 format=3 uid="uid://cvx2d0nsis120"]
+[gd_scene load_steps=15 format=3 uid="uid://cvx2d0nsis120"]
 
 [ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
 [ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
-[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/PS_Normal.gd" id="3_fd82q"]
+[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="3_fd82q"]
 [ext_resource type="PackedScene" uid="uid://biinuai6v07hi" path="res://Game/Player/Pocahontas_3DModel.fbx" id="4_2nirr"]
+[ext_resource type="Script" uid="uid://b8v0sfjcgjett" path="res://Game/Player/Scripts/FSM/FSM_run.gd" id="4_hf5e6"]
+[ext_resource type="Script" uid="uid://da8fdy073swx2" path="res://Game/Player/Scripts/FSM/FSM_jump.gd" id="5_e0asf"]
 [ext_resource type="Script" uid="uid://6jk712f26y3a" path="res://Game/Player/cursor.gd" id="5_kt3un"]
+[ext_resource type="Script" uid="uid://b762uob2q8kns" path="res://Game/Player/Scripts/FSM/FSM_falling.gd" id="6_q7ak8"]
+[ext_resource type="Script" uid="uid://cxlybbsmti4vg" path="res://Game/Player/Scripts/FSM/FSM_crouch.gd" id="7_ee8ni"]
+[ext_resource type="Script" uid="uid://fg6vch48tpoj" path="res://Game/Player/Scripts/FSM/FSM_sliding.gd" id="8_6upfr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_deoc1"]
 
@@ -22,7 +27,11 @@ height = 0.2
 radial_segments = 6
 rings = 4
 
-[node name="Player" type="CharacterBody3D"]
+[node name="Player" type="RigidBody3D"]
+axis_lock_angular_x = true
+axis_lock_angular_y = true
+axis_lock_angular_z = true
+gravity_scale = 2.0
 script = ExtResource("1_fd82q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -35,11 +44,31 @@ shape = SubResource("CapsuleShape3D_e0wbv")
 
 [node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fd82q")
-initial_state = NodePath("State")
+initial_state = NodePath("IDLE")
 
-[node name="State" type="Node" parent="FSM_Movement"]
+[node name="IDLE" type="Node" parent="FSM_Movement"]
 script = ExtResource("3_fd82q")
 metadata/_custom_type_script = "uid://dxqd1vrwtyagt"
+
+[node name="RUN" type="Node" parent="FSM_Movement"]
+script = ExtResource("4_hf5e6")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
+
+[node name="JUMP" type="Node" parent="FSM_Movement"]
+script = ExtResource("5_e0asf")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
+
+[node name="FALLING" type="Node" parent="FSM_Movement"]
+script = ExtResource("6_q7ak8")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
+
+[node name="CROUCH" type="Node" parent="FSM_Movement"]
+script = ExtResource("7_ee8ni")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
+
+[node name="SLIDING" type="Node" parent="FSM_Movement"]
+script = ExtResource("8_6upfr")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
 [node name="Cursor" type="Node3D" parent="."]
 unique_name_in_owner = true
@@ -57,15 +86,16 @@ unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 1.52588e-05, 1.52588e-05)
 
 [node name="Torque" type="Node3D" parent="Cursor/Pivot"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 50)
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
 
 [node name="Camera3D" type="Camera3D" parent="Cursor/Pivot/Torque"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 1.86265e-09, -2.98023e-08, 1, 0, 0, 0)
-fov = 13.1
+current = true
 size = 11.476
 
 [node name="Pocahontas_3DModel" parent="." instance=ExtResource("4_2nirr")]
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0281016, -0.589362, 0.0920526)
 
-[connection signal="MouseInp" from="FSM_Movement/State" to="Cursor" method="_on_state_mouse_inp"]
-[connection signal="MouseSus" from="FSM_Movement/State" to="Cursor" method="_on_state_mouse_sus"]
+[connection signal="MouseInp" from="." to="Cursor" method="_on_mouse_inp"]
+[connection signal="MouseSus" from="." to="Cursor" method="_on_mouse_sus"]
+[connection signal="transition" from="FSM_Movement/IDLE" to="FSM_Movement" method="_on_child_transition"]
