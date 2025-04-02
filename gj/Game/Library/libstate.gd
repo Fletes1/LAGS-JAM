@@ -43,10 +43,10 @@ class_name libState
 
 
 class PlayerState extends State:
-	@onready var player : CharacterBody3D
+	
 	#var inputs : Dictionary
 	func _ready() -> void:
-		player=get_parent().get_parent()
+		
 		pass # Replace with function body.
 		#
 	#func getInput():

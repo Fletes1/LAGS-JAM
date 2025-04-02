@@ -1,12 +1,16 @@
-[gd_scene load_steps=8 format=3 uid="uid://cvx2d0nsis120"]
+[gd_scene load_steps=10 format=3 uid="uid://cvx2d0nsis120"]
 
 [ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
 [ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
 [ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/PS_Normal.gd" id="3_fd82q"]
+[ext_resource type="PackedScene" uid="uid://biinuai6v07hi" path="res://Game/Player/Pocahontas_3DModel.fbx" id="4_2nirr"]
+[ext_resource type="Script" uid="uid://6jk712f26y3a" path="res://Game/Player/cursor.gd" id="5_kt3un"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_deoc1"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e0wbv"]
+radius = 0.290839
+height = 1.52711
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fd82q"]
 albedo_color = Color(1, 0.188235, 0.145098, 1)
@@ -22,9 +26,11 @@ rings = 4
 script = ExtResource("1_fd82q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("CapsuleMesh_deoc1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109104, 0.173542, 0.0801595)
 shape = SubResource("CapsuleShape3D_e0wbv")
 
 [node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -35,24 +41,31 @@ initial_state = NodePath("State")
 script = ExtResource("3_fd82q")
 metadata/_custom_type_script = "uid://dxqd1vrwtyagt"
 
-[node name="Pivot" type="Node3D" parent="."]
+[node name="Cursor" type="Node3D" parent="."]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.42109e-14, -1.52588e-05, -1.52588e-05)
+script = ExtResource("5_kt3un")
 
-[node name="Node3D" type="Node3D" parent="Pivot"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 50)
+[node name="Puntero" type="Marker3D" parent="Cursor"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 1.14441e-05, 1.40214)
 
-[node name="Torque" type="Node3D" parent="Pivot/Node3D"]
-transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 0)
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor/Puntero"]
+mesh = SubResource("SphereMesh_fd82q")
 
-[node name="Camera3D" type="Camera3D" parent="Pivot/Node3D/Torque"]
+[node name="Pivot" type="Node3D" parent="Cursor"]
+unique_name_in_owner = true
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.42109e-14, 1.52588e-05, 1.52588e-05)
+
+[node name="Torque" type="Node3D" parent="Cursor/Pivot"]
+transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 50, 50)
+
+[node name="Camera3D" type="Camera3D" parent="Cursor/Pivot/Torque"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 1.86265e-09, -2.98023e-08, 1, 0, 0, 0)
 fov = 13.1
 size = 11.476
 
-[node name="Puntero" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 1.40213)
+[node name="Pocahontas_3DModel" parent="." instance=ExtResource("4_2nirr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0281016, -0.589362, 0.0920526)
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Puntero"]
-mesh = SubResource("SphereMesh_fd82q")
-
-[connection signal="MouseInp" from="FSM_Movement/State" to="." method="_on_state_mouse_inp"]
-[connection signal="MouseSus" from="FSM_Movement/State" to="." method="_on_state_mouse_sus"]
+[connection signal="MouseInp" from="FSM_Movement/State" to="Cursor" method="_on_state_mouse_inp"]
+[connection signal="MouseSus" from="FSM_Movement/State" to="Cursor" method="_on_state_mouse_sus"]

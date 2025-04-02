@@ -21,7 +21,7 @@ func update(_delta: float):
 		current_state.update(_delta);
 	pass
 
-func _process(_delta: float) -> void:
+func physics_update(_delta: float) -> void:
 	if current_state:
 		current_state.physics_update(_delta);
 	pass
