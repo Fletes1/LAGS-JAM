@@ -81,7 +81,6 @@ transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.79
 [node name="Player" parent="." instance=ExtResource("10_lmntw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29801, 0.999999, 2.88978)
 
-=======
 [node name="AkListener3D" type="AkListener3D" parent="Player"]
 
 [node name="Emvironment" type="Node" parent="."]
@@ -194,6 +193,5 @@ load_on = 1
 [node name="AkEvent2D" type="AkEvent2D" parent="."]
 event = ExtResource("14_2i8bo")
 trigger_on = 1
-
 
 [editable path="Player"]
