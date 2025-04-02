@@ -2,8 +2,11 @@ class_name AK
 
 class EVENTS:
 
+	const PLAY_AMBIENTE_CATACUMBA : int = 2655504731
+	const PLAY_ANTORCHA : int = 37813828
 	const PLAY_MOUSE_SOBRE_OPCIONES : int = 3236977634
 	const PLAY_OPCIONES_IN : int = 4057716190
+	const PLAY_OPCIONES_OFF : int = 1931507818
 	const PLAY_START : int = 2230670290
 
 class STATES:
@@ -24,6 +27,7 @@ class BANKS:
 
 class AUX_BUSSES:
 
+	const CATACUMBA : int = 1182336810
 	const REVERB_MENU : int = 1031316333
 
 class ACOUSTIC_TEXTURES:

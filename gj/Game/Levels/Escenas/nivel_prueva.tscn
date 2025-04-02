@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://c1gews85h6vnf"]
+[gd_scene load_steps=32 format=3 uid="uid://c1gews85h6vnf"]
 
 [ext_resource type="Texture2D" uid="uid://iomexovh0ci2" path="res://Game/Levels/Modelos/OBJ/Suelo.png" id="1_nknxj"]
 [ext_resource type="ArrayMesh" uid="uid://b7vv8wektukpa" path="res://Game/Levels/Modelos/OBJ/ParaCaminar.obj" id="2_60e0x"]
@@ -12,6 +12,8 @@
 [ext_resource type="PackedScene" uid="uid://cvx2d0nsis120" path="res://Game/Player/Player.tscn" id="10_lmntw"]
 [ext_resource type="PackedScene" uid="uid://bcycwvvlig1vi" path="res://Game/Objects/Test.tscn" id="11_1hq43"]
 [ext_resource type="PackedScene" uid="uid://ci0eq8w3om6hi" path="res://Game/Enemies/Dummy.tscn" id="12_2frcr"]
+[ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="13_3vfnn"]
+[ext_resource type="WwiseEvent" uid="uid://bnyn5cnv7epus" path="res://Wwise/resources/Event/{84F8D0FB-FFF1-4449-8675-749F73F1711C}.tres" id="14_2i8bo"]
 
 [sub_resource type="Environment" id="Environment_nknxj"]
 background_mode = 1
@@ -79,8 +81,8 @@ transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.79
 [node name="Player" parent="." instance=ExtResource("10_lmntw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29801, 0.999999, 2.88978)
 
-[node name="Camera3D" parent="Player/Cursor/Pivot/Torque" index="0"]
-transform = Transform3D(1, 0, -1.86265e-09, 0, 1, 0, 1.86265e-09, 0, 1, 0, 0, 0)
+=======
+[node name="AkListener3D" type="AkListener3D" parent="Player"]
 
 [node name="Emvironment" type="Node" parent="."]
 
@@ -185,7 +187,13 @@ transform = Transform3D(0.999262, 0, -0.0384227, 0, 1, 0, 0.0384227, 0, 0.999262
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0)
 metadata/_edit_group_ = true
 
-[node name="Prueba" type="Camera3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 2.86013, 4.19672, 4.47804)
+[node name="AkBank" type="AkBank" parent="."]
+bank = ExtResource("13_3vfnn")
+load_on = 1
+
+[node name="AkEvent2D" type="AkEvent2D" parent="."]
+event = ExtResource("14_2i8bo")
+trigger_on = 1
+
 
 [editable path="Player"]
