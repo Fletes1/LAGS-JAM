@@ -1,23 +1,34 @@
 Event	ID	Name			Wwise Object Path	Notes
+	37813828	Play_Antorcha			\Default Work Unit\Play_Antorcha	
 	1931507818	Play_Opciones_OFF			\Default Work Unit\Play_Opciones_OFF	
 	2230670290	Play_Start			\Default Work Unit\Play_Start	
+	2655504731	Play_Ambiente_Catacumba			\Default Work Unit\Play_Ambiente_Catacumba	
 	3236977634	Play_Mouse_Sobre_Opciones			\Default Work Unit\Play_Mouse_Sobre_Opciones	
 	4057716190	Play_Opciones_IN			\Default Work Unit\Play_Opciones_IN	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	2460606139	Espacial			\Default Work Unit\Master Audio Bus\Espacial	
 	2607556080	Menu			\Default Work Unit\Master Audio Bus\Menu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	
+	4095160060	Ambiente			\Default Work Unit\Master Audio Bus\Ambiente	
 
 Auxiliary Bus	ID	Name			Wwise Object Path	Notes
 	1031316333	Reverb_Menu			\Default Work Unit\Master Audio Bus\Reverb_Menu	
+	1182336810	Catacumba			\Default Work Unit\Master Audio Bus\Catacumba	
 
 Effect plug-ins	ID	Name	Type				Notes
+	415841907	Space_Garage	Wwise RoomVerb			
 	2995775460	Room_Small	Wwise RoomVerb			
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
+	27534915	Rumble_Ambiente_Cata	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FD\{FDCBB4A0-6746-FC1A-056A-28851B8493CE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambiente_Catacumba\Rumble_Ambiente_Cata		2643352
 	33259363	Opciones_OFF	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FF\{FFE9A2DF-E28B-FE48-6398-23BE94FCD927}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_OFF		183956
-	599916585	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\F4\{F4DDDB4A-D18A-53E1-4716-4F9D4B993B6F}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		257700
+	49527230	Rumble_Ambiente_Cata_02	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\C1\{C1976AFC-6159-488B-8656-8DBB708343D7}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambiente_Catacumba\Rumble_Ambiente_Cata_02		3773440
+	293030218	Rumble_Ambiente_Cata_04	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\D7\{D74B2D64-A203-91F1-5F04-5B725921C654}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambiente_Catacumba\Rumble_Ambiente_Cata_04		4290600
+	317843635	Rumble_Ambiente_Cata_01	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\4F\{4FFEFE30-0B04-DB68-B3F3-C5139C1B7E91}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambiente_Catacumba\Rumble_Ambiente_Cata_01		3581900
+	599916585	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\DF\{DFEBE61F-D9B8-888F-A633-81E45667CCFB}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		257700
+	630814504	Antorcha_01	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\64\{64EBA3CC-BFE9-2FE4-0FAD-070657CEEEFA}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Antorcha\Antorcha_01		933752
 	646408947	Start	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\3E\{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem		\Actor-Mixer Hierarchy\MENU\Start		1284620
-	806244285	Opciones_IN-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\48\{482DE07A-3128-6859-D45F-FC50494971E5}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-002		185356
-	1069516321	Opciones_IN-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FA\{FA19C0CB-0CA7-A51D-F16C-1680112148DE}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-001		173388
+	806244285	Opciones_IN-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\14\{1400C762-4D54-77BE-4CA9-08EF996915E7}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-002		185356
+	1069516321	Opciones_IN-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\78\{78D8871A-3F9F-1C19-B726-287B96632ABD}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-001		173388
 
