@@ -1,15 +1,15 @@
 [gd_scene load_steps=15 format=3 uid="uid://cvx2d0nsis120"]
 
-[ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
-[ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
-[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="3_fd82q"]
+[ext_resource type="Script" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="3_fd82q"]
 [ext_resource type="PackedScene" uid="uid://biinuai6v07hi" path="res://Game/Player/Pocahontas_3DModel.fbx" id="4_2nirr"]
-[ext_resource type="Script" uid="uid://b8v0sfjcgjett" path="res://Game/Player/Scripts/FSM/FSM_run.gd" id="4_hf5e6"]
-[ext_resource type="Script" uid="uid://da8fdy073swx2" path="res://Game/Player/Scripts/FSM/FSM_jump.gd" id="5_e0asf"]
-[ext_resource type="Script" uid="uid://6jk712f26y3a" path="res://Game/Player/cursor.gd" id="5_kt3un"]
-[ext_resource type="Script" uid="uid://b762uob2q8kns" path="res://Game/Player/Scripts/FSM/FSM_falling.gd" id="6_q7ak8"]
-[ext_resource type="Script" uid="uid://cxlybbsmti4vg" path="res://Game/Player/Scripts/FSM/FSM_crouch.gd" id="7_ee8ni"]
-[ext_resource type="Script" uid="uid://fg6vch48tpoj" path="res://Game/Player/Scripts/FSM/FSM_sliding.gd" id="8_6upfr"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_run.gd" id="4_hf5e6"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_jump.gd" id="5_e0asf"]
+[ext_resource type="Script" path="res://Game/Player/cursor.gd" id="5_kt3un"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_falling.gd" id="6_q7ak8"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_crouch.gd" id="7_ee8ni"]
+[ext_resource type="Script" path="res://Game/Player/Scripts/FSM/FSM_sliding.gd" id="8_6upfr"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_deoc1"]
 
@@ -92,4 +92,3 @@ mesh = SubResource("SphereMesh_fd82q")
 
 [connection signal="MouseInp" from="." to="Pivot" method="_on_mouse_inp"]
 [connection signal="MouseSus" from="." to="Pivot" method="_on_mouse_sus"]
-[connection signal="transition" from="FSM_Movement/IDLE" to="FSM_Movement" method="_on_child_transition"]

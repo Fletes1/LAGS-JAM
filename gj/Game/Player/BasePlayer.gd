@@ -4,9 +4,8 @@ extends RigidBody3D
 signal MouseInp
 signal MouseSus
 
-@onready var cursor = $Cursor
+@onready var cursor = $Pivot
 @onready var body = $FSM_Movement
-@onready var pivot = $Cursor/Pivot
 
 @export var speed = 10
 @export var jump = 30
@@ -31,9 +30,9 @@ func _physics_process(_delta: float) -> void:
 #Comandos que son indendientes del movimiento
 func indpendentMove(_delta:float):
 	if Input.is_action_pressed("rotate_L"):
-		pivot.rotate_object_local(Vector3(0,1,0),-2*_delta)
+		cursor.rotate_object_local(Vector3(0,1,0),-2*_delta)
 	elif Input.is_action_pressed("rotate_R"):
-		pivot.rotate_object_local(Vector3(0,1,0),5*_delta)
+		cursor.rotate_object_local(Vector3(0,1,0),5*_delta)
 	cursor.global_position=global_position
 	
 	timeRef+=_delta
@@ -52,7 +51,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var inp_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	var inp_jump = float(Input.is_action_just_pressed("ui_accept"))*speed
 	
-	direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
+	direction = (cursor.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
 	
 	
 	#if FREE_MOV fall: el moviientocontrolado por computador

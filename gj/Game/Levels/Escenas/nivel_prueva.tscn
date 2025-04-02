@@ -79,9 +79,6 @@ transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.79
 [node name="Player" parent="." instance=ExtResource("10_lmntw")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.29801, 0.999999, 2.88978)
 
-[node name="Camera3D" parent="Player/Cursor/Pivot/Torque" index="0"]
-transform = Transform3D(1, 0, -1.86265e-09, 0, 1, 0, 1.86265e-09, 0, 1, 0, 0, 0)
-
 [node name="Emvironment" type="Node" parent="."]
 
 [node name="ParaCaminar" type="MeshInstance3D" parent="Emvironment"]
