@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://dg2r1mbwwqs1k"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Ambiente_Catacumba"
+id = 2655504731
+guid = "{84F8D0FB-FFF1-4449-8675-749F73F1711C}"
+dummy = true
