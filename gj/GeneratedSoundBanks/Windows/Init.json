@@ -10,20 +10,12 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{14CB300F-F482-812C-17A3-7D22ABCD76CA}",
+    "Hash": "{70AA43E0-15D1-7C6A-BA8A-A64224DD25E5}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
     "Plugins": {
      "ShareSets": [
-      {
-       "Id": "415841907",
-       "Name": "Space_Garage",
-       "ObjectPath": "\\Effects\\Factory Effects\\RoomVerb\\Huge Spaces\\Space_Garage",
-       "GUID": "{1AF92D84-49DD-4BBC-8F29-6C6D10082B6E}",
-       "LibName": "Wwise RoomVerb",
-       "LibId": "7733251"
-      },
       {
        "Id": "2995775460",
        "Name": "Room_Small",
@@ -54,12 +46,6 @@
     },
     "Busses": [
      {
-      "Id": "2460606139",
-      "Name": "Espacial",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Espacial",
-      "GUID": "{A871BC7B-7DC6-4DFA-AD13-F98FC9B57202}"
-     },
-     {
       "Id": "2607556080",
       "Name": "Menu",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu",
@@ -70,12 +56,6 @@
       "Name": "Master Audio Bus",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus",
       "GUID": "{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}"
-     },
-     {
-      "Id": "4095160060",
-      "Name": "Ambiente",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Ambiente",
-      "GUID": "{3A2047A6-9E00-4B2F-8F78-0489F27FB99D}"
      }
     ],
     "AuxBusses": [
@@ -88,19 +68,6 @@
        "ShareSets": [
         {
          "Id": "2995775460"
-        }
-       ]
-      }
-     },
-     {
-      "Id": "1182336810",
-      "Name": "Catacumba",
-      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Catacumba",
-      "GUID": "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}",
-      "PluginRefs": {
-       "ShareSets": [
-        {
-         "Id": "415841907"
         }
        ]
       }
@@ -585,6 +552,6 @@
     ]
    }
   ],
-  "FileHash": "{924FFF04-AFE5-A9C7-ACD9-19F5659A13F7}"
+  "FileHash": "{EEB1EC6A-F182-DF60-D4B0-6C769E752F71}"
  }
 }
