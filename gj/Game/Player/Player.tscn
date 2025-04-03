@@ -32,6 +32,7 @@ axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
 gravity_scale = 2.0
+continuous_cd = true
 script = ExtResource("1_fd82q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -92,7 +93,6 @@ script = ExtResource("5_kt3un")
 mesh = SubResource("SphereMesh_fd82q")
 
 [node name="FSM_Cursor" type="Node" parent="Cursor"]
-script = ExtResource("2_fd82q")
 
 [node name="DetGround" type="RayCast3D" parent="."]
 target_position = Vector3(0, -0.925, 0)
