@@ -13,12 +13,16 @@ var refTime = 0.0
 var contBody : Object
 var objHook : Object
 var firstPos = Vector2.ZERO
+var whipLimitPower : float
+var whipDeathZone : float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	cursor = self
 	head = get_parent()
 	camera = head.get_node("Pivot/Torque/Camera3D")
+	whipLimitPower = head.whipLimitPower
+	whipDeathZone = head.whipDeathZone
 	pass # Replace with function body.
 
 
@@ -75,14 +79,14 @@ func hookObjective():
 		#al igual que la posiicon original
 		firstPos= get_viewport().get_mouse_position() #Agarra el angulo iinicial de dondefue agarrrado en relacion con la pantalla "viewport" otnendiendo los datos en un vector 2D
 		#agarra la ultima velocidad registradaa del mouse en un vector 2D, luego obtiene la longitud final de ese valor
-	print(firstPos,get_viewport().get_mouse_position())	
-	if (firstPos - get_viewport().get_mouse_position()).length() > 50 :
+	##print(firstPos,get_viewport().get_mouse_position())	
+	if (firstPos - get_viewport().get_mouse_position()).length() > whipDeathZone :
 		
-		var velMouse = min(Input.get_last_mouse_velocity().length(),50)
-		print(velMouse)
+		var velMouse = min(Input.get_last_mouse_velocity().length(),whipLimitPower)
+		##print(velMouse)
 		#print((Input.get_last_mouse_screen_velocity() - firstPos).length())
 		var angleDif = (Input.get_last_mouse_screen_velocity() - firstPos).angle_to(firstPos*-1) ##Obtiene el angulo entre la ultima posicion del mouse y el punto de origen
-		print(angleDif)
+		##print(angleDif)
 		velMouse*=(1-(min(angleDif,90)/90))
 		if contBody.is_in_group("Enemigos"):#altera la velocidad pero no la direccion, para que se a mas facil apuntar al enemigo
 			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velMouse)

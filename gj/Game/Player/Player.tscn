@@ -71,8 +71,8 @@ metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 script = ExtResource("8_6upfr")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
-[node name="Pocahontas_3DModel" parent="." instance=ExtResource("4_2nirr")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0281016, -0.589362, 0.0920526)
+[node name="Model" parent="." instance=ExtResource("4_2nirr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.00451113, -0.589362, 0.0920526)
 
 [node name="Pivot" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -95,6 +95,5 @@ mesh = SubResource("SphereMesh_fd82q")
 [node name="FSM_Cursor" type="Node" parent="Cursor"]
 
 [node name="DetGround" type="RayCast3D" parent="."]
-target_position = Vector3(0, -0.925, 0)
-
-[connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]
+target_position = Vector3(0, -0.69, 0)
+debug_shape_custom_color = Color(0, 0.901961, 0, 1)
