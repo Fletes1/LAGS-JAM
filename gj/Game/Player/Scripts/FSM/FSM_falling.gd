@@ -5,9 +5,12 @@ extends State
 var timeRef := 0.0
 func _ready() -> void:
 	head=get_parent().get_parent()
+	
 	pass
 	
 func enter():
+	head.speed = 5
+	head.onAir = true
 	pass
 	
 func exit():
@@ -15,6 +18,8 @@ func exit():
 
 
 func physics_update(_delta: float):
+	if head.detGround or (head.linear_velocity.y == 0):
+		transition.emit(self,"IDLE")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

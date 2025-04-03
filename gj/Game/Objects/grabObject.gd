@@ -1,30 +1,16 @@
 extends RigidBody3D
 
-signal whiplashed(hit_pos:Vector3,velMouse)
-signal hooked(mosueVel:Vector2,playerPos:Vector3)
-var direction := Vector3.ZERO
-var MouDir 
-var MouVel 
-var ImpDir
-# Called when the node enters the scene tree for the first time.
+signal applyImpulse
+
 func _init() -> void:
-	self.whiplashed.connect(on_whiplashed,CONNECT_REFERENCE_COUNTED)
-	self.hooked.connect(on_hooked,CONNECT_REFERENCE_COUNTED)
-
-func on_whiplashed(pos_player):
-	var impulse = Vector2(pos_player.x-position.x,pos_player.z-position.z).normalized()
-	impulse *= -1;
-	apply_impulse(Vector3(impulse.x,0,impulse.y))
+	self.applyImpulse.connect(on_applyImpulse,CONNECT_REFERENCE_COUNTED)
 	
-	pass
 
-func on_hooked(posPla,posImp,force):
-	#var MouVel = Input.get_last_mouse_velocity().length()
+func on_applyImpulse(posPla,posImp,force):
+	##Debe ser normalizado para queno agarre valores mas alla de su alcance
 	var pos = (posImp-self.position).normalized();
-	var impulse = (posPla-self.position).normalized()*force
+	##agarra la posicion de donde se encgancha el latigo, luego lo resta con si propia posicion para sacar la posicion final, que es la posicion de dedonde va a surgir el impulso
+	var impulse = (posPla-self.position).normalized()*force##Calcula primero la direccion del jugador al restar su propias psocion con la de ljugaor, despues de eso se le aplica la fuerza de impulso
 	#ImpDir *= abs(MouVel/10);
-	apply_impulse(impulse,pos)
-	
-	#if MouVel >
-	
-	pass
+	apply_impulse(impulse,pos) 
+	#aplicamos el impulso al objeto
