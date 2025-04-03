@@ -18,6 +18,7 @@ namespace AK
         static const AkUniqueID PLAY_MOUSE_SOBRE_OPCIONES = 3236977634U;
         static const AkUniqueID PLAY_OPCIONES_IN = 4057716190U;
         static const AkUniqueID PLAY_OPCIONES_OFF = 1931507818U;
+        static const AkUniqueID PLAY_RATONES = 143414144U;
         static const AkUniqueID PLAY_START = 2230670290U;
     } // namespace EVENTS
 

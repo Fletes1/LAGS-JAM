@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{AFE4B7F9-222C-AA50-8DC5-F442A373468B}",
+    "Hash": "{1E8D72C5-99C4-0FDE-1604-B5E08E926100}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
@@ -46,6 +46,14 @@
       "Location": "Memory",
       "ShortName": "Antorcha.wav",
       "CachePath": "0B/{0BF2640C-8283-C7B7-4C8E-A9F0269458C3}.wem"
+     },
+     {
+      "Id": "170757173",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Raton 4.wav",
+      "CachePath": "D1/{D18CB077-5A59-EA23-582B-1A66C3DF7B34}.wem"
      },
      {
       "Id": "293030218",
@@ -104,6 +112,14 @@
       "CachePath": "3E/{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem"
      },
      {
+      "Id": "664906445",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "raton 1.wav",
+      "CachePath": "CC/{CCE1E25E-399D-A5E6-1C4A-115C875EE9EE}.wem"
+     },
+     {
       "Id": "806244285",
       "Language": "SFX",
       "Streaming": "false",
@@ -112,12 +128,36 @@
       "CachePath": "14/{1400C762-4D54-77BE-4CA9-08EF996915E7}.wem"
      },
      {
+      "Id": "851282342",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Raton 2.wav",
+      "CachePath": "7D/{7DFAE33B-B7E0-A6D9-6A43-86D62605E263}.wem"
+     },
+     {
+      "Id": "939145053",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Raton 3.wav",
+      "CachePath": "74/{74DDDC62-72E1-A405-23F1-47C69D039FF8}.wem"
+     },
+     {
       "Id": "1049008196",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Antorcha.wav",
       "CachePath": "93/{93A1975B-1A6A-78D9-8975-3DFBF97DBD5D}.wem"
+     },
+     {
+      "Id": "1068175509",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "Raton 5.wav",
+      "CachePath": "97/{97146C5F-D5C2-FA6B-DA29-4CA8988CBCD5}.wem"
      },
      {
       "Id": "1069516321",
@@ -296,6 +336,40 @@
       ]
      },
      {
+      "Id": "143414144",
+      "Name": "Play_Ratones",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Ratones",
+      "GUID": "{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}",
+      "DurationType": "OneShot",
+      "DurationMin": "1.3869166",
+      "DurationMax": "3.5607917",
+      "MediaRefs": [
+       {
+        "Id": "170757173"
+       },
+       {
+        "Id": "664906445"
+       },
+       {
+        "Id": "851282342"
+       },
+       {
+        "Id": "939145053"
+       },
+       {
+        "Id": "1068175509"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1182336810",
+        "Name": "Catacumba",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Catacumba",
+        "GUID": "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}"
+       }
+      ]
+     },
+     {
       "Id": "2230670290",
       "Name": "Play_Start",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Start",
@@ -366,6 +440,6 @@
     ]
    }
   ],
-  "FileHash": "{E2B76971-F8C4-3897-2D3B-22B9B8A74F48}"
+  "FileHash": "{6BDFD82C-DB3E-6F73-4957-F941CD6CEC63}"
  }
 }
