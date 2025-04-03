@@ -1,5 +1,8 @@
 extends State
 
+#ESTE NODO NO SE DEBE DE TOCAR JAMAS, DEPENDE DEMASIADO DE PUNTERO Y EL CUERPO JUNTOS
+##LO MEJOR QUE PUEDES HACER ES LIMITARTE A "N O  T O C A R" ESTE NODo POR NADA
+
 @export var initial_state : State
 
 var current_state : State

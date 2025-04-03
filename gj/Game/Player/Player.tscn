@@ -5,7 +5,7 @@
 [ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="3_fd82q"]
 [ext_resource type="PackedScene" uid="uid://biinuai6v07hi" path="res://Game/Player/Pocahontas_3DModel.fbx" id="4_2nirr"]
 [ext_resource type="Script" uid="uid://b8v0sfjcgjett" path="res://Game/Player/Scripts/FSM/FSM_run.gd" id="4_hf5e6"]
-[ext_resource type="Script" uid="uid://da8fdy073swx2" path="res://Game/Player/Scripts/FSM/FSM_jump.gd" id="5_e0asf"]
+[ext_resource type="Script" uid="uid://da8fdy073swx2" path="res://Game/Player/Scripts/FSM/FSM_going_up.gd" id="5_e0asf"]
 [ext_resource type="Script" uid="uid://6jk712f26y3a" path="res://Game/Player/cursor.gd" id="5_kt3un"]
 [ext_resource type="Script" uid="uid://b762uob2q8kns" path="res://Game/Player/Scripts/FSM/FSM_falling.gd" id="6_q7ak8"]
 [ext_resource type="Script" uid="uid://cxlybbsmti4vg" path="res://Game/Player/Scripts/FSM/FSM_crouch.gd" id="7_ee8ni"]
@@ -54,7 +54,7 @@ metadata/_custom_type_script = "uid://dxqd1vrwtyagt"
 script = ExtResource("4_hf5e6")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
-[node name="JUMP" type="Node" parent="FSM_Movement"]
+[node name="GOING_UP" type="Node" parent="FSM_Movement"]
 script = ExtResource("5_e0asf")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
@@ -74,7 +74,7 @@ metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0281016, -0.589362, 0.0920526)
 
 [node name="Pivot" type="Node3D" parent="."]
-script = ExtResource("5_kt3un")
+metadata/_edit_lock_ = true
 
 [node name="Torque" type="Node3D" parent="Pivot"]
 transform = Transform3D(1, 0, 0, 0, 0.707107, 0.707107, 0, -0.707107, 0.707107, 0, 10, 10)
@@ -84,11 +84,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 1.86265e-09, -2.98023e-08, 1, 0, 0, 0)
 current = true
 size = 11.476
 
-[node name="Puntero" type="Marker3D" parent="Pivot"]
+[node name="Cursor" type="Marker3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -3.8147e-06, 1.40212)
+script = ExtResource("5_kt3un")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Pivot/Puntero"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Cursor"]
 mesh = SubResource("SphereMesh_fd82q")
 
-[connection signal="MouseInp" from="." to="Pivot" method="_on_mouse_inp"]
-[connection signal="MouseSus" from="." to="Pivot" method="_on_mouse_sus"]
+[node name="FSM_Cursor" type="Node" parent="Cursor"]
+script = ExtResource("2_fd82q")
+
+[node name="DetGround" type="RayCast3D" parent="."]
+target_position = Vector3(0, -0.925, 0)
+
+[connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]
