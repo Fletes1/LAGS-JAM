@@ -26,7 +26,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	33259363	Opciones_OFF	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FF\{FFE9A2DF-E28B-FE48-6398-23BE94FCD927}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_OFF		183956
 	49527230	Rumble_Ambiente_Cata_02	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\DE\{DE272ADD-B354-D254-A3B5-5577E209F542}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ambiente_Catacumba\Rumble_Ambiente_Cata_02		3773440
 	94689640	Antorcha_02	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\0B\{0BF2640C-8283-C7B7-4C8E-A9F0269458C3}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Antorcha\Antorcha_02		1542256
-	170757173	Ratones-004	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\D1\{D18CB077-5A59-EA23-582B-1A66C3DF7B34}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-004		683768
+	170757173	Ratones-004	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\FC\{FC2D6907-768D-E733-90B7-48BDB1093D96}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-004		683768
 	293030218	Rumble_Ambiente_Cata_04	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\38\{383B5F4E-918F-E8D2-6E14-ABCF54EAA4A9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ambiente_Catacumba\Rumble_Ambiente_Cata_04		4290600
 	317843635	Rumble_Ambiente_Cata_01	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\46\{46D8ED4F-7730-0B8D-C336-E71DB35C5B89}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ambiente_Catacumba\Rumble_Ambiente_Cata_01		3581900
 	498139599	Rumble_Ambiente_Cata_03	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\2D\{2DDFD819-41C5-DA2D-70C1-A5217CCDDC3F}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ambiente_Catacumba\Rumble_Ambiente_Cata_03		3715980
@@ -34,11 +34,11 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	599916585	Mouse_Sobre_Opciones	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\DF\{DFEBE61F-D9B8-888F-A633-81E45667CCFB}.wem		\Actor-Mixer Hierarchy\MENU\Mouse_Sobre_Opciones		257700
 	630814504	Antorcha_03	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\19\{19509CA9-FCBC-BBE2-9CD2-9AFF978DA4D9}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Antorcha\Antorcha_03		826916
 	646408947	Start	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\3E\{3EDA6FB3-55A9-257D-DE20-789363BE44A6}.wem		\Actor-Mixer Hierarchy\MENU\Start		1284620
-	664906445	Ratones-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\CC\{CCE1E25E-399D-A5E6-1C4A-115C875EE9EE}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-001		418784
+	664906445	Ratones-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\74\{748A9A4A-601B-3278-0403-CA8FA23DCCF2}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-001		418784
 	806244285	Opciones_IN-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\14\{1400C762-4D54-77BE-4CA9-08EF996915E7}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-002		185356
-	851282342	Ratones-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\7D\{7DFAE33B-B7E0-A6D9-6A43-86D62605E263}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-002		398440
-	939145053	Ratones-003	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\74\{74DDDC62-72E1-A405-23F1-47C69D039FF8}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-003		325808
+	851282342	Ratones-002	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\44\{447D54DD-7AF3-3BA2-7123-8C10A0B9B7DC}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-002		398440
+	939145053	Ratones-003	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\37\{379CEFB7-FC0C-A5FF-2E12-F030BCE09063}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-003		325808
 	1049008196	Antorcha_01	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\93\{93A1975B-1A6A-78D9-8975-3DFBF97DBD5D}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Antorcha\Antorcha_01		933752
-	1068175509	Ratones-005	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\97\{97146C5F-D5C2-FA6B-DA29-4CA8988CBCD5}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-005		266384
+	1068175509	Ratones-005	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\46\{465AB4B7-058C-B4B3-B2DB-089DCB694090}.wem		\Actor-Mixer Hierarchy\Default Work Unit\Escena 1\Ambientes\Ratones\Ratones-005		266384
 	1069516321	Opciones_IN-001	D:\Wwise2022.1.11.8414\LAGS TEAM\.cache\78\{78D8871A-3F9F-1C19-B726-287B96632ABD}.wem		\Actor-Mixer Hierarchy\MENU\Opciones_IN\Opciones_IN-001		173388
 

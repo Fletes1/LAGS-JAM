@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://bpvadu1o01obd"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Ratones"
+id = 143414144
+guid = "{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}"
+dummy = true

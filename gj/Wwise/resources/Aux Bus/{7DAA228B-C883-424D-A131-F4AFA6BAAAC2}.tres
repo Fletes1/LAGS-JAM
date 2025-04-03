@@ -1,0 +1,8 @@
+[gd_resource type="WwiseAuxBus" format=3 uid="uid://bgo4nd5x5ptmm"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Catacumba"
+id = 1182336810
+guid = "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}"
+dummy = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=3 uid="uid://c1gews85h6vnf"]
+[gd_scene load_steps=33 format=3 uid="uid://c1gews85h6vnf"]
 
 [ext_resource type="Texture2D" uid="uid://iomexovh0ci2" path="res://Game/Levels/Modelos/OBJ/Suelo.png" id="1_nknxj"]
 [ext_resource type="ArrayMesh" uid="uid://b7vv8wektukpa" path="res://Game/Levels/Modelos/OBJ/ParaCaminar.obj" id="2_60e0x"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://ci0eq8w3om6hi" path="res://Game/Enemies/Dummy.tscn" id="12_2frcr"]
 [ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="13_3vfnn"]
 [ext_resource type="WwiseEvent" uid="uid://dg2r1mbwwqs1k" path="res://Wwise/resources/Event/{84F8D0FB-FFF1-4449-8675-749F73F1711C}.tres" id="14_2i8bo"]
+[ext_resource type="WwiseEvent" uid="uid://bpvadu1o01obd" path="res://Wwise/resources/Event/{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}.tres" id="15_2i8bo"]
 
 [sub_resource type="Environment" id="Environment_nknxj"]
 background_mode = 1
@@ -190,7 +191,11 @@ metadata/_edit_group_ = true
 bank = ExtResource("13_3vfnn")
 load_on = 1
 
-[node name="AkEvent3D" type="AkEvent3D" parent="."]
+[node name="Ratones" type="AkEvent2D" parent="."]
+event = ExtResource("15_2i8bo")
+trigger_on = 1
+
+[node name="Ambientes" type="AkEvent2D" parent="."]
 event = ExtResource("14_2i8bo")
 trigger_on = 1
 
