@@ -20,11 +20,13 @@ func _ready():
 	pass 
 
 func update(_delta: float):
+	
 	if current_state:
 		current_state.update(_delta);
 	pass
 
 func physics_update(_delta: float) -> void:
+	print(current_state)
 	if current_state:
 		current_state.physics_update(_delta);
 	pass

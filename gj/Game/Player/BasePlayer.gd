@@ -11,9 +11,10 @@ signal applyImpulse
 @onready var detGround=$DetGround
 
 @export var speed = 10
-@export var jump = 30
+@export var jump = 15
 
 var onAir : bool
+var onGround : bool
 var direction = Vector3.ZERO
 var timeRef = 0.0
 var delta
@@ -21,6 +22,7 @@ var delta
 func _ready() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_HIDDEN
 	contact_monitor=true
+	detGround.add_exception(self)
 
 #Explicacion visual de la rutina del
 func _physics_process(_delta: float) -> void:
@@ -46,17 +48,18 @@ func indpendentMove(_delta:float):
 	if Input.is_action_just_pressed("mouseLeft"):
 		emit_signal("MouseInp")
 		timeRef=_delta
-	if detGround:
-		detGround=true
+	if detGround.is_colliding():
+		onGround = true
 	else:
-		detGround=false
+		onGround = false
+	
 	pass
 
 #Acceso directo al PhysicsDirectBodyState3D para mayor control del personaje
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 	var inp_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	var inp_jump = float(Input.is_action_just_pressed("ui_accept"))*speed
+	var inp_jump = Input.is_action_just_pressed("ui_accept")
 	
 	direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
 	
@@ -64,9 +67,19 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	#if FREE_MOV fall: el moviientocontrolado por computador
 	#else: movimiento controlado por usuario
 	#No sobrescribas el Linear_velocity "Y" o la gravedad deja de funcionar
-	if direction:
-		state.linear_velocity.x=direction.x*speed
-		state.linear_velocity.z=direction.z*speed
+	
+	if onAir:
+		if direction:
+			state.linear_velocity.x=direction.x*speed
+			state.linear_velocity.z=direction.z*speed
+		
+	else:
+		if direction:
+			state.linear_velocity.x=direction.x*speed
+			state.linear_velocity.z=direction.z*speed
+		if inp_jump:
+			state.linear_velocity.y=float(inp_jump)*jump
+	
 	#XZ son controlados por el usario
 	#Y (Gravedad) lo calcula la maquina
 	#	state.linear_velocity = lerp(linear_velocity, Vector3.ZERO, speed)
@@ -75,7 +88,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 	#el apply impulse se esta conectando al direction, pero me temo que por las prisas lo voy a dejar asi
 	#Podria intentar multiplicar la gravedad a ver que sucede, duplicarla
-	apply_impulse(Vector3(0,inp_jump,0))
+	apply_impulse(Vector3(0,0,0))
 	
 	#print(inp_jump,"|",get_gravity(),"|",get_colliding_bodies(),"|",linear_velocity)
 
@@ -83,7 +96,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	#print(Input.get_last_mouse_screen_velocity())
 
 
-func _on_apply_impulse(player,posImp,force) -> void:
+func _on_apply_impulse(_player,posImp,force) -> void:
 	##Debe ser normalizado para queno agarre valores mas alla de su alcance
 	#var pos = (posImp-self.position).normalized();
 	##agarra la posicion de donde se encgancha el latigo, luego lo resta con si propia posicion para sacar la posicion final, que es la posicion de dedonde va a surgir el impulso

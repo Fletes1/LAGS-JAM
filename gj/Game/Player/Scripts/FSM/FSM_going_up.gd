@@ -2,13 +2,17 @@ extends State
 
 @onready var head : Node3D
 
+var baseValues : Dictionary
 var timeRef := 0.0
+
 func _ready() -> void:
 	head=get_parent().get_parent()
+	baseValues["speed"]=head.speed
+	baseValues["jump"]=head.jump
 	pass
 	
 func enter():
-	head.speed = 5
+	head.speed = baseValues.speed/4
 	head.onAir = true
 	pass
 	

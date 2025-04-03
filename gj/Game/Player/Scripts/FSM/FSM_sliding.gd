@@ -1,20 +1,25 @@
 extends State
 
 @onready var head : Node3D
+
+var baseValues : Dictionary
+
 var timeRef := 0.0
 func _ready() -> void:
 	head=get_parent().get_parent()
+	baseValues["speed"]=head.speed
+	baseValues["jump"]=head.jump
 	pass
 
 func enter():
+	head.onAir = false
 	pass
 	
 func exit():
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func update(_delta: float):
-	pass
+
 
 func physics_update(_delta: float):
 	pass
