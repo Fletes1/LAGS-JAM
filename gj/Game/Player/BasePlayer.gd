@@ -46,7 +46,7 @@ func indpendentMove(_delta:float):
 	if Input.is_action_just_pressed("mouseLeft"):
 		emit_signal("MouseInp")
 		timeRef=_delta
-	if detGround.is_colliding():
+	if detGround:
 		detGround=true
 	else:
 		detGround=false

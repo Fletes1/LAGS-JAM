@@ -1,4 +1,4 @@
-[gd_resource type="WwiseProjectData" load_steps=33 format=3 uid="uid://bl5bqyfseool8"]
+[gd_resource type="WwiseProjectData" load_steps=34 format=3 uid="uid://bl5bqyfseool8"]
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dn5s6"]
 path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Acoustic_Banner"
@@ -212,6 +212,15 @@ guid = "{2CA7C4B1-B15F-4603-B790-B7A673CCB301}"
 id = 1931507818
 
 [sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
+max_duration = 3.56079
+min_duration = 1.38692
+path = "\\Events\\Default Work Unit\\Play_Ratones"
+type = 3
+name = "Play_Ratones"
+guid = "{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}"
+id = 143414144
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
 max_duration = 6.69023
 min_duration = 6.69023
 path = "\\Events\\Default Work Unit\\Play_Start"
@@ -220,8 +229,8 @@ name = "Play_Start"
 guid = "{08B57533-FC62-4B71-8F6C-902372BAFC6C}"
 id = 2230670290
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0g3k4"]
-children = [SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5ppdk"]
+children = [SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4")]
 name = "Default Work Unit"
 id = 125608783
 
@@ -229,4 +238,4 @@ id = 125608783
 acoustic_texture_root = [SubResource("WwiseTreeObject_4djpx")]
 bus_root = [SubResource("WwiseTreeObject_i5cxa")]
 bank_root = [SubResource("WwiseTreeObject_v560u")]
-event_root = [SubResource("WwiseTreeObject_0g3k4")]
+event_root = [SubResource("WwiseTreeObject_5ppdk")]
