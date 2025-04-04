@@ -1,8 +1,8 @@
 [gd_scene load_steps=15 format=3 uid="uid://cvx2d0nsis120"]
 
 [ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
-[ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Player/Scripts/FSM/fsm.gd" id="2_fd82q"]
-[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="3_fd82q"]
+[ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Library/fsm.gd" id="2_fd82q"]
+[ext_resource type="Script" uid="uid://bd15lhxmtdjbf" path="res://Game/Player/Scripts/FSM/FSM_walking.gd" id="3_fd82q"]
 [ext_resource type="PackedScene" uid="uid://biinuai6v07hi" path="res://Game/Player/Pocahontas_3DModel.fbx" id="4_2nirr"]
 [ext_resource type="Script" uid="uid://b8v0sfjcgjett" path="res://Game/Player/Scripts/FSM/FSM_run.gd" id="4_hf5e6"]
 [ext_resource type="Script" uid="uid://da8fdy073swx2" path="res://Game/Player/Scripts/FSM/FSM_going_up.gd" id="5_e0asf"]
@@ -40,18 +40,18 @@ visible = false
 mesh = SubResource("CapsuleMesh_deoc1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109104, 0.173542, 0.0801595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0109104, 0.304773, 0.000788108)
 shape = SubResource("CapsuleShape3D_e0wbv")
 
 [node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
 script = ExtResource("2_fd82q")
-initial_state = NodePath("IDLE")
+initial_state = NodePath("WALKING")
 
-[node name="IDLE" type="Node" parent="FSM_Movement"]
+[node name="WALKING" type="Node" parent="FSM_Movement"]
 script = ExtResource("3_fd82q")
 metadata/_custom_type_script = "uid://dxqd1vrwtyagt"
 
-[node name="RUN" type="Node" parent="FSM_Movement"]
+[node name="RUNING" type="Node" parent="FSM_Movement"]
 script = ExtResource("4_hf5e6")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
@@ -63,7 +63,7 @@ metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 script = ExtResource("6_q7ak8")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
-[node name="CROUCH" type="Node" parent="FSM_Movement"]
+[node name="ON_CROUCH" type="Node" parent="FSM_Movement"]
 script = ExtResource("7_ee8ni")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
@@ -71,8 +71,8 @@ metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 script = ExtResource("8_6upfr")
 metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
 
-[node name="Pocahontas_3DModel" parent="." instance=ExtResource("4_2nirr")]
-transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0.0281016, -0.589362, 0.0920526)
+[node name="Model3D" parent="." instance=ExtResource("4_2nirr")]
+transform = Transform3D(1.2, 0, 0, 0, 1.2, 0, 0, 0, 1.2, 0, -0.446833, 0.1)
 
 [node name="Pivot" type="Node3D" parent="."]
 metadata/_edit_lock_ = true
@@ -95,6 +95,6 @@ mesh = SubResource("SphereMesh_fd82q")
 [node name="FSM_Cursor" type="Node" parent="Cursor"]
 
 [node name="DetGround" type="RayCast3D" parent="."]
-target_position = Vector3(0, -0.925, 0)
+target_position = Vector3(0, -0.57, 0)
 
 [connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]

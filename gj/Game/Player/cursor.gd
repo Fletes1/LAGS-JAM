@@ -13,6 +13,7 @@ var refTime = 0.0
 var contBody : Object
 var objHook : Object
 var firstPos = Vector2.ZERO
+var velMouse : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,10 +29,11 @@ func physics_update(_delta: float) -> void:
 	useRay(ray)
 	if Input.is_action_pressed("mouseLeft") and noAction:
 		refTime += _delta
-		if refTime > 0.05:
+		if refTime > 0.1:
+			
 			hookObjective();
 	if Input.is_action_just_released("mouseLeft"):
-		if refTime <= 0.09 and noAction:
+		if refTime <= 0.3 and noAction:
 			makeSingleShot(-10);
 		refTime=0.0
 		noAction=true
@@ -58,10 +60,12 @@ func createRay():
 
 func hookObjective():
 	if !objHook:
+		
 		if contBody.is_in_group("Objetos"):
 			#makeSingleShot(1)
 			objHook=contBody
 		elif contBody.name =="StaticBody3D":
+			
 			objHook=get_parent()
 			pass
 		elif contBody.is_in_group("Enemigos"):
@@ -75,39 +79,41 @@ func hookObjective():
 		#al igual que la posiicon original
 		firstPos= get_viewport().get_mouse_position() #Agarra el angulo iinicial de dondefue agarrrado en relacion con la pantalla "viewport" otnendiendo los datos en un vector 2D
 		#agarra la ultima velocidad registradaa del mouse en un vector 2D, luego obtiene la longitud final de ese valor
-	print(firstPos,get_viewport().get_mouse_position())	
-	if (firstPos - get_viewport().get_mouse_position()).length() > 50 :
+	
+	
+	if (firstPos - get_viewport().get_mouse_position()).length() > 100 :
 		
-		var velMouse = min(Input.get_last_mouse_velocity().length(),50)
-		print(velMouse)
-		#print((Input.get_last_mouse_screen_velocity() - firstPos).length())
+		var velImp = min(velMouse.length(),50)
 		var angleDif = (Input.get_last_mouse_screen_velocity() - firstPos).angle_to(firstPos*-1) ##Obtiene el angulo entre la ultima posicion del mouse y el punto de origen
-		print(angleDif)
+		#
 		velMouse*=(1-(min(angleDif,90)/90))
 		if contBody.is_in_group("Enemigos"):#altera la velocidad pero no la direccion, para que se a mas facil apuntar al enemigo
-			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velMouse)
+			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
 		else:#altera la direccion a la que va
-			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velMouse)
+			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
 		objHook=null
 		noAction = false
 	pass
+	
+func _unhandled_input(event: InputEvent) -> void:
+	
+	if event is InputEventMouseMotion:
+		velMouse=event.screen_velocity
 
 
 func makeSingleShot(force):
-	if contBody.is_in_group("Objetos"):
-		contBody.emit_signal("applyImpulse",get_parent().position,global_position,force)
-	elif contBody.name=="StaticBody3D":
-		get_parent().emit_signal("applyImpulse",get_parent().position,global_position,force)
-		pass
-	elif contBody.is_in_group("Enemigos"):
-		contBody.emit_signal("applyWhiplash",force)
+	if contBody:
+		if contBody.is_in_group("Objetos"):
+			contBody.emit_signal("applyImpulse",get_parent().position,global_position,force)
+		elif contBody.name=="StaticBody3D":
+			
+			pass
+		elif contBody.is_in_group("Enemigos"):
+			contBody.emit_signal("applyWhiplash")
 	else:
 		pass
-		#print(contBody.name,StaticBody3D,contBody.name=="StaticBody3D")
-		#get_parent().emit_signal("applyImpulse",get_parent().position,position,1)
-	pass # Replace with function body.
-
-
+		
+		
 		#print(Input.get_last_mouse_velocity(),firstPos)
 		#(Input.get_last_mouse_screen_velocity() - firstPos)
 		#diferencia de vector entre posicion enganchado y posicion actual

@@ -12,14 +12,17 @@ func _ready() -> void:
 	pass
 
 func enter():
-	head.onAir = false
+	head.freeMove = true
 	pass
 	
 func exit():
+	head.freeMove = false
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 
 func physics_update(_delta: float):
+	if !Input.is_action_pressed("crouch"):
+		transition.emit(self,"walking")
 	pass

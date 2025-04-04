@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://ci0eq8w3om6hi"]
+[gd_scene load_steps=7 format=3 uid="uid://ci0eq8w3om6hi"]
 
 [ext_resource type="Script" uid="uid://bfnr5wwxyub3o" path="res://Game/Enemies/dummy.gd" id="1_2ojar"]
+[ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Library/fsm.gd" id="2_f55ra"]
+[ext_resource type="Script" uid="uid://bjhva7pg14hm5" path="res://Game/Enemies/FSM/FSM_EG_wondering.gd" id="3_6xqqd"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_1sop8"]
 
@@ -10,7 +12,7 @@ albedo_color = Color(1, 0.45098, 0.380392, 1)
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_2ojar"]
 material = SubResource("StandardMaterial3D_1sop8")
 
-[node name="Enemy" type="CharacterBody3D" groups=["Enemigos"]]
+[node name="EnemyBase" type="CharacterBody3D" groups=["Enemigos"]]
 script = ExtResource("1_2ojar")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
@@ -19,3 +21,13 @@ shape = SubResource("CapsuleShape3D_1sop8")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 mesh = SubResource("CapsuleMesh_2ojar")
 skeleton = NodePath("../CollisionShape3D")
+
+[node name="NavigationAgent3D" type="NavigationAgent3D" parent="."]
+
+[node name="FSM" type="Node" parent="."]
+script = ExtResource("2_f55ra")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"
+
+[node name="WONDERING" type="Node" parent="FSM"]
+script = ExtResource("3_6xqqd")
+metadata/_custom_type_script = "uid://dcs5mvikxp8dg"

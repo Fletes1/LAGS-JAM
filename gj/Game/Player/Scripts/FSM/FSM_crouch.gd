@@ -5,7 +5,6 @@ extends State
 
 var baseValues : Dictionary
 
-var timeRef := 0.0
 func _ready() -> void:
 	head=get_parent().get_parent()
 	collision=head.get_node("CollisionShape3D")
@@ -15,7 +14,6 @@ func _ready() -> void:
 
 func enter():
 	head.speed = baseValues.speed/3
-	head.onAir = false
 	#head.collision.rotate_x(45)
 	pass
 	
@@ -25,8 +23,8 @@ func exit():
 
 
 func physics_update(_delta: float):
-	if Input.is_action_just_released("crouch"):
-		self.emit_signal("transition",self,"IDLE")
+	if !Input.is_action_pressed("crouch"):
+		self.emit_signal("transition",self,"walking")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

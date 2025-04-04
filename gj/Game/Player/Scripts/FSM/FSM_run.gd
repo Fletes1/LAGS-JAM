@@ -15,7 +15,6 @@ func _ready() -> void:
 	
 func enter():
 	head.speed=baseValues.speed*2
-	head.onAir = false
 	pass
 	
 func exit():
@@ -25,7 +24,7 @@ func exit():
 
 func physics_update(_delta: float):
 	if Input.is_action_just_released("run"):
-		self.emit_signal("transition",self,"IDLE")
+		self.emit_signal("transition",self,"walking")
 	pass
 
 
