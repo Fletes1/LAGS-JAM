@@ -5,6 +5,8 @@ extends RigidBody3D
 
 signal applyImpulse
 
+#AnimationMixer (at: Player.tscn): 'Armature|Armature|mixamo_com|Layer0', couldn't resolve track:  'Armature/Skeleton3D:mixamorig_RightHandThumb3'. This warning can be disabled in Project Settings.
+
 @onready var cursor = $Cursor
 @onready var FSM = $FSM_Movement
 @onready var pivot = $Pivot
