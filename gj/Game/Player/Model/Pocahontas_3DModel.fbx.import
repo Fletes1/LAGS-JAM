@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://biinuai6v07hi"
+uid="uid://c62x0blatd8l5"
 path="res://.godot/imported/Pocahontas_3DModel.fbx-07901eb3663d4e597f5e08c96fb015e2.scn"
 
 [deps]
@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/Pocahontas_3DModel.fbx-07901eb3663d4e597f5e08
 
 [params]
 
-nodes/root_type="Node3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0
