@@ -16,10 +16,18 @@ signal applyImpulse
 @export var speed = 10
 @export var jump = 15
 
+@export var _velRotCam = 5 		##Velocidda de trotacion de la camara
+@export var _whipMaxImpulse = 50 ##Potencia maxima del impulso del latigo
+@export var _whipMinImpulse = 5 ##Potencia Minima del impulso del latigo
+@export var _whipDeathZone = 100 ##que tan lejos debe ir el mouse para detectarlo, (Similar a la zona muerta de un joystcik)
+@export var _crouchEffect = 0.5
+@export var _runEffect = 1.5
+
 var freeMove : bool
 var onGround : bool
 var direction = Vector3.ZERO
 var timeRef = 0.0
+
 
 func _ready() -> void:
 	Input.mouse_mode=Input.MOUSE_MODE_HIDDEN
@@ -35,9 +43,9 @@ func _physics_process(_delta: float) -> void:
 #Comandos que son indendientes del movimiento
 func indpendentMove(_delta:float):
 	if Input.is_action_pressed("rotate_L"):
-		pivot.rotate_object_local(Vector3(0,1,0),-2*_delta)
+		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
 	elif Input.is_action_pressed("rotate_R"):
-		pivot.rotate_object_local(Vector3(0,1,0),5*_delta)
+		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
 	pivot.global_position=global_position
 	if detGround.is_colliding():
 		onGround=true
@@ -53,7 +61,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 	direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
 	if direction:
-		
 		model3D.global_rotation.y=-(Vector2(model3D.position.x,model3D.position.z).angle_to(Vector2(direction.x,direction.z)));
 	
 	#if FREE_MOV fall: el moviientocontrolado por computador

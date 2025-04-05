@@ -31,9 +31,7 @@ func physics_update(_delta: float):
 	if Input.is_action_pressed("crouch"):
 		self.emit_signal("transition",self,"on_crouch")
 	if !head.onGround and head.linear_velocity.y > 0:
-		
 		self.emit_signal("transition",self,"going_up")
 	elif !head.onGround and head.linear_velocity.y < 0:
-		
 		self.emit_signal("transition",self,"falling")
 	pass

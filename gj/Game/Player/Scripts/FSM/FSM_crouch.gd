@@ -13,7 +13,7 @@ func _ready() -> void:
 	pass
 
 func enter():
-	head.speed = baseValues.speed/3
+	head.speed = baseValues.speed*head._crouchEffect
 	#head.collision.rotate_x(45)
 	pass
 	

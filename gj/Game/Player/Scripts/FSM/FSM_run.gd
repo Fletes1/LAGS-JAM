@@ -14,7 +14,7 @@ func _ready() -> void:
 	pass
 	
 func enter():
-	head.speed=baseValues.speed*2
+	head.speed=baseValues.speed*head._runEffect
 	pass
 	
 func exit():
