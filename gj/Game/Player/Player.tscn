@@ -38,7 +38,7 @@ gravity_scale = 1.5
 can_sleep = false
 continuous_cd = true
 contact_monitor = true
-max_contacts_reported = 2
+max_contacts_reported = 1
 script = ExtResource("1_fd82q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
@@ -111,5 +111,7 @@ transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, 0, 0, 0)
 [node name="LimitElevation" type="CollisionShape3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07673, 0)
 shape = SubResource("SphereShape3D_hf5e6")
+
+[node name="Model3D" type="Node3D" parent="."]
 
 [connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]

@@ -24,7 +24,7 @@ signal applyImpulse
 @export var _whipDeathZone = 100 ##que tan lejos debe ir el mouse para detectarlo, (Similar a la zona muerta de un joystcik)
 @export var _crouchEffect = 0.5
 @export var _runEffect = 1.5
-@export var _limitRangeAct = 100
+@export var _limitRangeAct = 25
 
 var freeMove : bool
 var onGround : bool
@@ -48,7 +48,7 @@ func indpendentMove(_delta:float):
 	if Input.is_action_pressed("rotate_L"):
 		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
 	elif Input.is_action_pressed("rotate_R"):
-		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
+		pivot.rotate_object_local(Vector3(0,1,0),-_velRotCam*_delta)
 	pivot.global_position=global_position
 	if detGround.is_colliding():
 		onGround=true
@@ -65,7 +65,6 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var posElev = 0.0
 	if(get_contact_count()):
 		posElev=state.get_contact_local_position(0).y-refElev.global_position.y
-		print(get_colliding_bodies())
 	if 0 < posElev and posElev <1:
 		
 		state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed,0.3)
