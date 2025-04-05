@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cvx2d0nsis120"]
+[gd_scene load_steps=17 format=3 uid="uid://cvx2d0nsis120"]
 
 [ext_resource type="Script" uid="uid://dugkhqcdvpb40" path="res://Game/Player/BasePlayer.gd" id="1_fd82q"]
 [ext_resource type="Script" uid="uid://cnbyva2pgir10" path="res://Game/Library/fsm.gd" id="2_fd82q"]
@@ -10,12 +10,14 @@
 [ext_resource type="Script" uid="uid://cxlybbsmti4vg" path="res://Game/Player/Scripts/FSM/FSM_crouch.gd" id="7_ee8ni"]
 [ext_resource type="Script" uid="uid://fg6vch48tpoj" path="res://Game/Player/Scripts/FSM/FSM_sliding.gd" id="8_6upfr"]
 [ext_resource type="Script" uid="uid://dgkv51kef13jc" path="res://Game/Player/Scripts/FSM/FSM_IDLE.gd" id="9_e0asf"]
+[ext_resource type="PackedScene" uid="uid://duwhrrpdd27wt" path="res://Game/Player/Model/PocahontasFinal3DModel.fbx" id="11_e0asf"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_deoc1"]
 radius = 0.38
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_e0wbv"]
-radius = 0.39141
+radius = 0.182764
+height = 1.50644
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_fd82q"]
 albedo_color = Color(1, 0.188235, 0.145098, 1)
@@ -28,7 +30,7 @@ radial_segments = 6
 rings = 4
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_hf5e6"]
-radius = 0.426353
+radius = 0.211381
 
 [node name="Player" type="RigidBody3D"]
 axis_lock_angular_x = true
@@ -43,10 +45,11 @@ script = ExtResource("1_fd82q")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+visible = false
 mesh = SubResource("CapsuleMesh_deoc1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843351, 0.0465696)
 shape = SubResource("CapsuleShape3D_e0wbv")
 
 [node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -109,9 +112,10 @@ target_position = Vector3(0, -0.425, 0)
 transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, 0, 0, 0)
 
 [node name="LimitElevation" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07673, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07673, 0.061127)
 shape = SubResource("SphereShape3D_hf5e6")
 
-[node name="Model3D" type="Node3D" parent="."]
+[node name="Model3D" parent="." instance=ExtResource("11_e0asf")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0680097)
 
 [connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]

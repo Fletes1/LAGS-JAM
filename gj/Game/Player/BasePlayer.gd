@@ -62,6 +62,9 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var inp_dir = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var inp_jump = Input.is_action_just_pressed("ui_accept")
 	var direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
+	
+	
+	
 	var posElev = 0.0
 	if(get_contact_count()):
 		posElev=state.get_contact_local_position(0).y-refElev.global_position.y
