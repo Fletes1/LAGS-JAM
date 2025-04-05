@@ -53,20 +53,18 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
 	direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
 	if direction:
+		
 		model3D.global_rotation.y=-(Vector2(model3D.position.x,model3D.position.z).angle_to(Vector2(direction.x,direction.z)));
 	
 	#if FREE_MOV fall: el moviientocontrolado por computador
 	#else: movimiento controlado por usuario
 	#No sobrescribas el Linear_velocity "Y" o la gravedad deja de funcionar
 	
-	if freeMove:
-		state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed+state.linear_velocity.x,0.1)
-		state.linear_velocity.z=lerp(state.linear_velocity.z,direction.z*speed+state.linear_velocity.z,0.1)
-	else:
-		if direction:
-			state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed,1)
-			state.linear_velocity.z=lerp(state.linear_velocity.z,direction.z*speed,1)
-	if inp_jump:
+	
+	if direction:
+		state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed,1)
+		state.linear_velocity.z=lerp(state.linear_velocity.z,direction.z*speed,1)
+	if inp_jump and onGround:
 		state.linear_velocity.y=float(inp_jump)*jump
 	
 	#XZ son controlados por el usario

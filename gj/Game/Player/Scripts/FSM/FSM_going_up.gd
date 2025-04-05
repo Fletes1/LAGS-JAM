@@ -12,7 +12,7 @@ func _ready() -> void:
 	pass
 	
 func enter():
-	head.speed = baseValues.speed/4
+	head.speed = baseValues.speed
 	head.freeMove = true
 	pass
 	
