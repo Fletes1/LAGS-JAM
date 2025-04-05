@@ -81,9 +81,9 @@ func hookObjective():
 		#agarra la ultima velocidad registradaa del mouse en un vector 2D, luego obtiene la longitud final de ese valor
 	
 	
-	if (firstPos - get_viewport().get_mouse_position()).length() > 100 :
+	if (firstPos - get_viewport().get_mouse_position()).length() > head._limitRangeAct :
 		
-		var velImp = min(velMouse.length(),50)
+		var velImp = max(min(velMouse.length(),head._whipMaxImpulse),head._whipMinImpulse)
 		var angleDif = (Input.get_last_mouse_screen_velocity() - firstPos).angle_to(firstPos*-1) ##Obtiene el angulo entre la ultima posicion del mouse y el punto de origen
 		#
 		velMouse*=(1-(min(angleDif,90)/90))
