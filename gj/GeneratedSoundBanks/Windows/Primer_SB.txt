@@ -1,6 +1,7 @@
 Event	ID	Name			Wwise Object Path	Notes
 	37813828	Play_Antorcha			\Default Work Unit\Play_Antorcha	
 	143414144	Play_Ratones			\Default Work Unit\Play_Ratones	
+	1772340735	Iniciar_Juego			\Default Work Unit\Iniciar_Juego	
 	1931507818	Play_Opciones_OFF			\Default Work Unit\Play_Opciones_OFF	
 	2230670290	Play_Start			\Default Work Unit\Play_Start	
 	2655504731	Play_Ambiente_Catacumba			\Default Work Unit\Play_Ambiente_Catacumba	

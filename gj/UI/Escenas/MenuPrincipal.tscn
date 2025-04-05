@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhdff804umdo8"]
+[gd_scene load_steps=8 format=3 uid="uid://bhdff804umdo8"]
 
 [ext_resource type="Script" uid="uid://ccx12cjtdppww" path="res://UI/Scripts/Menu_Principal.gd" id="1_iq5l4"]
 [ext_resource type="Script" uid="uid://bvkmtlf1tf3ae" path="res://UI/Scripts/MenuDeOpciones.gd" id="2_i4iwo"]
 [ext_resource type="WwiseEvent" uid="uid://vnr1cl263rs8" path="res://Wwise/resources/Event/{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}.tres" id="2_rh3e6"]
 [ext_resource type="WwiseEvent" uid="uid://cu1f08re36vqc" path="res://Wwise/resources/Event/{C1C473D6-210B-492F-8444-74BFB4CD37C3}.tres" id="3_g3s20"]
+[ext_resource type="WwiseEvent" uid="uid://54vngibdo3rg" path="res://Wwise/resources/Event/{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}.tres" id="3_oc57a"]
 [ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="4_rh3e6"]
 [ext_resource type="WwiseEvent" uid="uid://cf1gb2eoe7fd" path="res://Wwise/resources/Event/{2CA7C4B1-B15F-4603-B790-B7A673CCB301}.tres" id="5_s2vxr"]
 
@@ -43,6 +44,9 @@ text = "Comenzar"
 [node name="Cuando el jugador pone el mouse sobre" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Comenzar"]
 event = ExtResource("2_rh3e6")
 
+[node name="Pausar Al iniciar" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Comenzar"]
+event = ExtResource("3_oc57a")
+
 [node name="Opciones" type="Button" parent="Menuprincipal/HBoxContainer"]
 layout_mode = 2
 text = "Opciones
@@ -51,7 +55,7 @@ text = "Opciones
 [node name="Cuando el jugador pone el mouse sobre" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Opciones"]
 event = ExtResource("2_rh3e6")
 
-[node name="AkEvent2D" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Opciones"]
+[node name="SFX Opciones IN" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Opciones"]
 event = ExtResource("3_g3s20")
 
 [node name="Salir" type="Button" parent="Menuprincipal/HBoxContainer"]
@@ -62,7 +66,7 @@ text = "Salir
 [node name="Cuando el jugador pone el mouse sobre" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Salir"]
 event = ExtResource("2_rh3e6")
 
-[node name="AkEvent2D" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Salir"]
+[node name="SFX Opciones IN" type="AkEvent2D" parent="Menuprincipal/HBoxContainer/Salir"]
 event = ExtResource("3_g3s20")
 
 [node name="Salir" type="Panel" parent="Menuprincipal"]
@@ -159,12 +163,13 @@ load_on = 2
 [node name="AkListener2D" type="AkListener2D" parent="."]
 
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal" method="Comenzar_nivel"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal/HBoxContainer/Comenzar/Pausar Al iniciar" method="post_event"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Comenzar" to="Menuprincipal/HBoxContainer/Comenzar/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal" method="Opciones"]
-[connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal/HBoxContainer/Opciones/AkEvent2D" method="post_event"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal/HBoxContainer/Opciones/SFX Opciones IN" method="post_event"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Opciones" to="Menuprincipal/HBoxContainer/Opciones/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal" method="SalirDelJuego"]
-[connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal/HBoxContainer/Salir/AkEvent2D" method="post_event"]
+[connection signal="button_up" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal/HBoxContainer/Salir/SFX Opciones IN" method="post_event"]
 [connection signal="mouse_entered" from="Menuprincipal/HBoxContainer/Salir" to="Menuprincipal/HBoxContainer/Salir/Cuando el jugador pone el mouse sobre" method="post_event"]
 [connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Aceptar" to="Menuprincipal" method="Salir_Aceptar"]
 [connection signal="button_up" from="Menuprincipal/Salir/HBoxContainer/Cancelar" to="Menuprincipal" method="Salir_Cancelar"]
