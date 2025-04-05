@@ -1,4 +1,4 @@
-[gd_resource type="WwiseProjectData" load_steps=34 format=3 uid="uid://bl5bqyfseool8"]
+[gd_resource type="WwiseProjectData" load_steps=35 format=3 uid="uid://bl5bqyfseool8"]
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dn5s6"]
 path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Acoustic_Banner"
@@ -135,18 +135,18 @@ guid = "{A871BC7B-7DC6-4DFA-AD13-F98FC9B57202}"
 id = 2460606139
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu"
-type = 2
-name = "Menu"
-guid = "{91005BF5-B15B-4107-9AF4-D49B36610317}"
-id = 2607556080
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Catacumba"
 type = 1
 name = "Catacumba"
 guid = "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}"
 id = 1182336810
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu"
+type = 2
+name = "Menu"
+guid = "{91005BF5-B15B-4107-9AF4-D49B36610317}"
+id = 2607556080
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu"
@@ -168,13 +168,22 @@ id = 125608783
 [sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_ptp8y"]
 max_duration = 0.0
 min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Iniciar_Juego"
+type = 3
+name = "Iniciar_Juego"
+guid = "{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}"
+id = 1772340735
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_26l8v"]
+max_duration = 0.0
+min_duration = 0.0
 path = "\\Events\\Default Work Unit\\Play_Ambiente_Catacumba"
 type = 3
 name = "Play_Ambiente_Catacumba"
 guid = "{84F8D0FB-FFF1-4449-8675-749F73F1711C}"
 id = 2655504731
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_26l8v"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hir8t"]
 max_attenuation = 20.0
 max_duration = 0.0
 min_duration = 0.0
@@ -184,7 +193,7 @@ name = "Play_Antorcha"
 guid = "{B728D88A-6EFC-4BA3-872E-4E068038CB08}"
 id = 37813828
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hir8t"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_viedb"]
 max_duration = 1.40109
 min_duration = 1.30349
 path = "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones"
@@ -193,7 +202,7 @@ name = "Play_Mouse_Sobre_Opciones"
 guid = "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}"
 id = 3236977634
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_viedb"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_bq6kk"]
 max_duration = 0.964896
 min_duration = 0.902562
 path = "\\Events\\Default Work Unit\\Play_Opciones_IN"
@@ -202,7 +211,7 @@ name = "Play_Opciones_IN"
 guid = "{C1C473D6-210B-492F-8444-74BFB4CD37C3}"
 id = 4057716190
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_bq6kk"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
 max_duration = 0.957604
 min_duration = 0.957604
 path = "\\Events\\Default Work Unit\\Play_Opciones_OFF"
@@ -211,7 +220,7 @@ name = "Play_Opciones_OFF"
 guid = "{2CA7C4B1-B15F-4603-B790-B7A673CCB301}"
 id = 1931507818
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
 max_duration = 0.0
 min_duration = 0.0
 path = "\\Events\\Default Work Unit\\Play_Ratones"
@@ -220,7 +229,7 @@ name = "Play_Ratones"
 guid = "{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}"
 id = 143414144
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5ppdk"]
 max_duration = 6.69023
 min_duration = 6.69023
 path = "\\Events\\Default Work Unit\\Play_Start"
@@ -229,8 +238,8 @@ name = "Play_Start"
 guid = "{08B57533-FC62-4B71-8F6C-902372BAFC6C}"
 id = 2230670290
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5ppdk"]
-children = [SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_l65hi"]
+children = [SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4"), SubResource("WwiseTreeObjectEvent_5ppdk")]
 name = "Default Work Unit"
 id = 125608783
 
@@ -238,4 +247,4 @@ id = 125608783
 acoustic_texture_root = [SubResource("WwiseTreeObject_4djpx")]
 bus_root = [SubResource("WwiseTreeObject_i5cxa")]
 bank_root = [SubResource("WwiseTreeObject_v560u")]
-event_root = [SubResource("WwiseTreeObject_5ppdk")]
+event_root = [SubResource("WwiseTreeObject_l65hi")]

@@ -13,6 +13,7 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID INICIAR_JUEGO = 1772340735U;
         static const AkUniqueID PLAY_AMBIENTE_CATACUMBA = 2655504731U;
         static const AkUniqueID PLAY_ANTORCHA = 37813828U;
         static const AkUniqueID PLAY_MOUSE_SOBRE_OPCIONES = 3236977634U;

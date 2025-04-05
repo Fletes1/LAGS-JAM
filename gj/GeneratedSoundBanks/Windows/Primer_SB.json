@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{E0AB48AE-C427-BA22-9019-999495845F46}",
+    "Hash": "{F562C8B5-1C1C-8332-C757-DE110A8F423E}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
@@ -189,6 +189,29 @@
      ]
     },
     "Events": [
+     {
+      "Id": "1772340735",
+      "Name": "Iniciar_Juego",
+      "ObjectPath": "\\Events\\Default Work Unit\\Iniciar_Juego",
+      "GUID": "{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "599916585"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
+       }
+      ]
+     },
      {
       "Id": "2655504731",
       "Name": "Play_Ambiente_Catacumba",
@@ -438,6 +461,6 @@
     ]
    }
   ],
-  "FileHash": "{70B3C314-D1E6-6EF1-420B-B93AC6779AF4}"
+  "FileHash": "{8740F782-1D02-A40C-6DF3-D1E5137F813D}"
  }
 }
