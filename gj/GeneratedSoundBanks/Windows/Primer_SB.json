@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{F562C8B5-1C1C-8332-C757-DE110A8F423E}",
+    "Hash": "{04018250-3C2E-FDEE-D188-6F709FC36AB3}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
@@ -54,6 +54,14 @@
       "Location": "Memory",
       "ShortName": "Raton 4.wav",
       "CachePath": "FC/{FC2D6907-768D-E733-90B7-48BDB1093D96}.wem"
+     },
+     {
+      "Id": "231961861",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Stems sin Percu.wav",
+      "CachePath": "DA/{DA19DE06-5563-E70D-136A-8E35C12C219B}.wem"
      },
      {
       "Id": "293030218",
@@ -102,6 +110,14 @@
       "Location": "Memory",
       "ShortName": "Antorcha.wav",
       "CachePath": "19/{19509CA9-FCBC-BBE2-9CD2-9AFF978DA4D9}.wem"
+     },
+     {
+      "Id": "645331957",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Percu Stems Only.wav",
+      "CachePath": "07/{07048892-EDF9-510F-FB50-8C830F6BD5DB}.wem"
      },
      {
       "Id": "646408947",
@@ -297,6 +313,21 @@
       ]
      },
      {
+      "Id": "4237703276",
+      "Name": "Play_Musica",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Musica",
+      "GUID": "{86266E33-EC9F-4A4E-835C-9A961E8F629B}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "231961861"
+       },
+       {
+        "Id": "645331957"
+       }
+      ]
+     },
+     {
       "Id": "4057716190",
       "Name": "Play_Opciones_IN",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Opciones_IN",
@@ -407,6 +438,12 @@
     ],
     "Busses": [
      {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Musica",
+      "GUID": "{3039171D-D4E4-4AC3-B59F-F589B8D0E5D5}"
+     },
+     {
       "Id": "2460606139",
       "Name": "Espacial",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Espacial",
@@ -458,9 +495,31 @@
        ]
       }
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\States\\Default Work Unit\\Musica",
+      "GUID": "{6089155E-165B-4E8A-9A7A-E150131E2451}",
+      "States": [
+       {
+        "Id": "656779640",
+        "Name": "State_ON",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\State_ON",
+        "GUID": "{B54DFDB8-80C1-49A9-83B6-4D7633C5F544}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\None",
+        "GUID": "{C37FB242-35C5-42B3-8290-5E8CFC7963E0}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{8740F782-1D02-A40C-6DF3-D1E5137F813D}"
+  "FileHash": "{F3866233-5ECF-CBFF-3502-82F86BDBD69C}"
  }
 }

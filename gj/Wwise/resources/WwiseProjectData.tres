@@ -1,4 +1,4 @@
-[gd_resource type="WwiseProjectData" load_steps=35 format=3 uid="uid://bl5bqyfseool8"]
+[gd_resource type="WwiseProjectData" load_steps=41 format=3 uid="uid://bl5bqyfseool8"]
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_dn5s6"]
 path = "\\Virtual Acoustics\\Factory Acoustic Textures\\Textures\\Acoustic_Banner"
@@ -135,37 +135,44 @@ guid = "{A871BC7B-7DC6-4DFA-AD13-F98FC9B57202}"
 id = 2460606139
 
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_5n8hf"]
-path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Catacumba"
-type = 1
-name = "Catacumba"
-guid = "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}"
-id = 1182336810
-
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Menu"
 type = 2
 name = "Menu"
 guid = "{91005BF5-B15B-4107-9AF4-D49B36610317}"
 id = 2607556080
 
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_tnib1"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Musica"
+type = 2
+name = "Musica"
+guid = "{3039171D-D4E4-4AC3-B59F-F589B8D0E5D5}"
+id = 1730564739
+
 [sub_resource type="WwiseTreeObject" id="WwiseTreeObject_o7sea"]
+path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Catacumba"
+type = 1
+name = "Catacumba"
+guid = "{7DAA228B-C883-424D-A131-F4AFA6BAAAC2}"
+id = 1182336810
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
 path = "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu"
 type = 1
 name = "Reverb_Menu"
 guid = "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
 id = 1031316333
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_lrto0"]
-children = [SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_geu6g"), SubResource("WwiseTreeObject_5n8hf"), SubResource("WwiseTreeObject_tnib1"), SubResource("WwiseTreeObject_o7sea")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
+children = [SubResource("WwiseTreeObject_yyrou"), SubResource("WwiseTreeObject_geu6g"), SubResource("WwiseTreeObject_5n8hf"), SubResource("WwiseTreeObject_tnib1"), SubResource("WwiseTreeObject_o7sea"), SubResource("WwiseTreeObject_lrto0")]
 name = "Master Audio Bus"
 id = 3803692087
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_i5cxa"]
-children = [SubResource("WwiseTreeObject_lrto0")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_ptp8y"]
+children = [SubResource("WwiseTreeObject_i5cxa")]
 name = "Default Work Unit"
 id = 125608783
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_ptp8y"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_26l8v"]
 max_duration = 0.0
 min_duration = 0.0
 path = "\\Events\\Default Work Unit\\Iniciar_Juego"
@@ -174,7 +181,7 @@ name = "Iniciar_Juego"
 guid = "{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}"
 id = 1772340735
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_26l8v"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hir8t"]
 max_duration = 0.0
 min_duration = 0.0
 path = "\\Events\\Default Work Unit\\Play_Ambiente_Catacumba"
@@ -183,7 +190,7 @@ name = "Play_Ambiente_Catacumba"
 guid = "{84F8D0FB-FFF1-4449-8675-749F73F1711C}"
 id = 2655504731
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hir8t"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_viedb"]
 max_attenuation = 20.0
 max_duration = 0.0
 min_duration = 0.0
@@ -193,7 +200,7 @@ name = "Play_Antorcha"
 guid = "{B728D88A-6EFC-4BA3-872E-4E068038CB08}"
 id = 37813828
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_viedb"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_bq6kk"]
 max_duration = 1.40109
 min_duration = 1.30349
 path = "\\Events\\Default Work Unit\\Play_Mouse_Sobre_Opciones"
@@ -202,7 +209,16 @@ name = "Play_Mouse_Sobre_Opciones"
 guid = "{8D49B0B6-AC24-4F5A-8673-8444F72BA0DF}"
 id = 3236977634
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_bq6kk"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
+max_duration = 0.0
+min_duration = 0.0
+path = "\\Events\\Default Work Unit\\Play_Musica"
+type = 3
+name = "Play_Musica"
+guid = "{86266E33-EC9F-4A4E-835C-9A961E8F629B}"
+id = 4237703276
+
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
 max_duration = 0.964896
 min_duration = 0.902562
 path = "\\Events\\Default Work Unit\\Play_Opciones_IN"
@@ -211,7 +227,7 @@ name = "Play_Opciones_IN"
 guid = "{C1C473D6-210B-492F-8444-74BFB4CD37C3}"
 id = 4057716190
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_hssb3"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5ppdk"]
 max_duration = 0.957604
 min_duration = 0.957604
 path = "\\Events\\Default Work Unit\\Play_Opciones_OFF"
@@ -220,7 +236,7 @@ name = "Play_Opciones_OFF"
 guid = "{2CA7C4B1-B15F-4603-B790-B7A673CCB301}"
 id = 1931507818
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_0g3k4"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_l65hi"]
 max_duration = 0.0
 min_duration = 0.0
 path = "\\Events\\Default Work Unit\\Play_Ratones"
@@ -229,7 +245,7 @@ name = "Play_Ratones"
 guid = "{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}"
 id = 143414144
 
-[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_5ppdk"]
+[sub_resource type="WwiseTreeObjectEvent" id="WwiseTreeObjectEvent_63ewg"]
 max_duration = 6.69023
 min_duration = 6.69023
 path = "\\Events\\Default Work Unit\\Play_Start"
@@ -238,13 +254,41 @@ name = "Play_Start"
 guid = "{08B57533-FC62-4B71-8F6C-902372BAFC6C}"
 id = 2230670290
 
-[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_l65hi"]
-children = [SubResource("WwiseTreeObjectEvent_ptp8y"), SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4"), SubResource("WwiseTreeObjectEvent_5ppdk")]
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_myib7"]
+children = [SubResource("WwiseTreeObjectEvent_26l8v"), SubResource("WwiseTreeObjectEvent_hir8t"), SubResource("WwiseTreeObjectEvent_viedb"), SubResource("WwiseTreeObjectEvent_bq6kk"), SubResource("WwiseTreeObjectEvent_hssb3"), SubResource("WwiseTreeObjectEvent_0g3k4"), SubResource("WwiseTreeObjectEvent_5ppdk"), SubResource("WwiseTreeObjectEvent_l65hi"), SubResource("WwiseTreeObjectEvent_63ewg")]
+name = "Default Work Unit"
+id = 125608783
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_gv40o"]
+path = "\\States\\Default Work Unit\\Musica\\None"
+type = 8
+name = "None"
+guid = "{C37FB242-35C5-42B3-8290-5E8CFC7963E0}"
+id = 748895195
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_0hqp2"]
+path = "\\States\\Default Work Unit\\Musica\\State_ON"
+type = 8
+name = "State_ON"
+guid = "{B54DFDB8-80C1-49A9-83B6-4D7633C5F544}"
+id = 656779640
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_h61g6"]
+path = "\\States\\Default Work Unit\\Musica"
+children = [SubResource("WwiseTreeObject_gv40o"), SubResource("WwiseTreeObject_0hqp2")]
+type = 9
+name = "Musica"
+guid = "{6089155E-165B-4E8A-9A7A-E150131E2451}"
+id = 1730564739
+
+[sub_resource type="WwiseTreeObject" id="WwiseTreeObject_q407k"]
+children = [SubResource("WwiseTreeObject_h61g6")]
 name = "Default Work Unit"
 id = 125608783
 
 [resource]
 acoustic_texture_root = [SubResource("WwiseTreeObject_4djpx")]
-bus_root = [SubResource("WwiseTreeObject_i5cxa")]
+bus_root = [SubResource("WwiseTreeObject_ptp8y")]
 bank_root = [SubResource("WwiseTreeObject_v560u")]
-event_root = [SubResource("WwiseTreeObject_l65hi")]
+event_root = [SubResource("WwiseTreeObject_myib7")]
+state_root = [SubResource("WwiseTreeObject_q407k")]
