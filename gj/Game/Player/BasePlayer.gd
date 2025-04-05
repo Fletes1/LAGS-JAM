@@ -12,6 +12,8 @@ signal applyImpulse
 @onready var pivot = $Pivot
 @onready var detGround=$DetGround
 @onready var model3D=$Model3D
+@onready var limElev=$LimitElevation
+@onready var refElev=$RefElevation
 
 @export var speed = 10
 @export var jump = 15
@@ -22,10 +24,11 @@ signal applyImpulse
 @export var _whipDeathZone = 100 ##que tan lejos debe ir el mouse para detectarlo, (Similar a la zona muerta de un joystcik)
 @export var _crouchEffect = 0.5
 @export var _runEffect = 1.5
+@export var _limitRangeAct = 100
 
 var freeMove : bool
 var onGround : bool
-var direction = Vector3.ZERO
+
 var timeRef = 0.0
 
 
@@ -56,22 +59,23 @@ func indpendentMove(_delta:float):
 #Acceso directo al PhysicsDirectBodyState3D para mayor control del personaje
 func _integrate_forces(state: PhysicsDirectBodyState3D):
 	
-	var inp_dir = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var inp_dir = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	var inp_jump = Input.is_action_just_pressed("ui_accept")
+	var direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
+	var posElev = 0.0
+	if(get_contact_count()):
+		posElev=state.get_contact_local_position(0).y-refElev.global_position.y
+		print(get_colliding_bodies())
+	if 0 < posElev and posElev <1:
+		
+		state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed,0.3)
+		state.linear_velocity.z=lerp(state.linear_velocity.z,direction.z*speed,0.3)
 	
-	direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
-	if direction:
-		model3D.global_rotation.y=-(Vector2(model3D.position.x,model3D.position.z).angle_to(Vector2(direction.x,direction.z)));
-	
-	#if FREE_MOV fall: el moviientocontrolado por computador
-	#else: movimiento controlado por usuario
-	#No sobrescribas el Linear_velocity "Y" o la gravedad deja de funcionar
-	
-	
-	if direction:
+	elif direction:
 		state.linear_velocity.x=lerp(state.linear_velocity.x,direction.x*speed,1)
 		state.linear_velocity.z=lerp(state.linear_velocity.z,direction.z*speed,1)
-	if inp_jump and onGround:
+	
+	if inp_jump and detGround.is_colliding():
 		state.linear_velocity.y=float(inp_jump)*jump
 	
 	#XZ son controlados por el usario
@@ -79,7 +83,7 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	#	state.linear_velocity = lerp(linear_velocity, Vector3.ZERO, speed)
 	
 	
-	state.apply_impulse(Vector3.ZERO)
+	#state.apply_impulse(Vector3.ZERO)
 	#el apply impulse se esta conectando al direction, pero me temo que por las prisas lo voy a dejar asi
 	#Podria intentar multiplicar la gravedad a ver que sucede, duplicarla
 	
@@ -90,7 +94,7 @@ func _on_apply_impulse(_player,posImp,force) -> void:
 	#var pos = (posImp-self.position).normalized();
 	##agarra la posicion de donde se encgancha el latigo, luego lo resta con si propia posicion para sacar la posicion final, que es la posicion de dedonde va a surgir el impulso
 	var impulse = (posImp-self.global_position).normalized()*force##Calcula primero la direccion del jugador al restar su propias psocion con la de ljugaor, despues de eso se le aplica la fuerza de impulso
-	
-	if !onGround:
-		apply_impulse(impulse) 
+	#print("posImp: ",posImp, "\n posSelf: ",self.global_position, "\n normalized: ",(posImp-self.global_position).normalized(),"\nImpulso: ",impulse)
+	#if !onGround:
+	linear_velocity += impulse
 	pass # Replace with function body.

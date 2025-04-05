@@ -25,7 +25,7 @@ signal applyWhiplash
 func _init() -> void:
 	self.applyWhiplash.connect(_on_applyWhiplash,CONNECT_REFERENCE_COUNTED)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if hitPoints == 0:
 		queue_free()
 

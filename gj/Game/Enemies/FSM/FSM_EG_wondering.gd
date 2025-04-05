@@ -11,7 +11,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 	#luego lo armo bien, por ahora primero la vida y salud
 	#if navAgent.is_target_reached() or !navAgent.target_position or !navAgent.is_target_reachable():
