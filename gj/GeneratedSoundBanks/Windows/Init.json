@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{701ECBBD-9C7B-4030-8CDB-749EE5D1C7B9}",
     "Language": "SFX",
-    "Hash": "{14CB300F-F482-812C-17A3-7D22ABCD76CA}",
+    "Hash": "{19DBF9E6-9614-0B49-EF9C-CCDBA60BA8FB}",
     "ObjectPath": "Init",
     "ShortName": "Init",
     "Path": "Init.bnk",
@@ -53,6 +53,12 @@
      ]
     },
     "Busses": [
+     {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Musica",
+      "GUID": "{3039171D-D4E4-4AC3-B59F-F589B8D0E5D5}"
+     },
      {
       "Id": "2460606139",
       "Name": "Espacial",
@@ -104,6 +110,28 @@
         }
        ]
       }
+     }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\States\\Default Work Unit\\Musica",
+      "GUID": "{6089155E-165B-4E8A-9A7A-E150131E2451}",
+      "States": [
+       {
+        "Id": "656779640",
+        "Name": "State_ON",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\State_ON",
+        "GUID": "{B54DFDB8-80C1-49A9-83B6-4D7633C5F544}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\None",
+        "GUID": "{C37FB242-35C5-42B3-8290-5E8CFC7963E0}"
+       }
+      ]
      }
     ],
     "AcousticTextures": [
@@ -585,6 +613,6 @@
     ]
    }
   ],
-  "FileHash": "{924FFF04-AFE5-A9C7-ACD9-19F5659A13F7}"
+  "FileHash": "{7EBCF2A0-5C5C-5260-2BF2-36B092B65F3D}"
  }
 }
