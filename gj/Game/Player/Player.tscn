@@ -49,7 +49,7 @@ visible = false
 mesh = SubResource("CapsuleMesh_deoc1")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.843351, 0.0465696)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.748, 0.047)
 shape = SubResource("CapsuleShape3D_e0wbv")
 
 [node name="FSM_Movement" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -105,8 +105,8 @@ mesh = SubResource("SphereMesh_fd82q")
 [node name="FSM_Cursor" type="Node" parent="Cursor"]
 
 [node name="DetGround" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0315085, 0)
-target_position = Vector3(0, -0.425, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.484355, 0)
+target_position = Vector3(0, -1.005, 0)
 
 [node name="RefElevation" type="Marker3D" parent="."]
 transform = Transform3D(5.96046e-08, 0, -1, 0, 1, 0, 1, 0, 5.96046e-08, 0, 0, 0)

@@ -63,6 +63,8 @@ func _integrate_forces(state: PhysicsDirectBodyState3D):
 	var inp_jump = Input.is_action_just_pressed("ui_accept")
 	var direction = (pivot.transform.basis * Vector3(inp_dir.x,0, inp_dir.y)).normalized()
 	
+	if direction:
+		model3D.global_rotation.y=-(Vector2(model3D.position.x,model3D.position.z).angle_to(Vector2(direction.x,direction.z)));
 	
 	
 	var posElev = 0.0
