@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{04018250-3C2E-FDEE-D188-6F709FC36AB3}",
+    "Hash": "{DED47C13-63EC-B0E4-9D66-A86D9E44701B}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
     "Media": [
+     {
+      "Id": "18361363",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Percu Stems Only REVERB FINAL.wav",
+      "CachePath": "72/{722A27E9-8902-2CD9-CE64-A74FD82652B3}.wem"
+     },
      {
       "Id": "27534915",
       "Language": "SFX",
@@ -54,14 +62,6 @@
       "Location": "Memory",
       "ShortName": "Raton 4.wav",
       "CachePath": "FC/{FC2D6907-768D-E733-90B7-48BDB1093D96}.wem"
-     },
-     {
-      "Id": "231961861",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "En la Cueva - Stems sin Percu.wav",
-      "CachePath": "DA/{DA19DE06-5563-E70D-136A-8E35C12C219B}.wem"
      },
      {
       "Id": "293030218",
@@ -104,20 +104,20 @@
       "CachePath": "DF/{DFEBE61F-D9B8-888F-A633-81E45667CCFB}.wem"
      },
      {
+      "Id": "628543799",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Stems sin Percu REVERB FINAL.wav",
+      "CachePath": "7C/{7CC24275-E4ED-0F84-353F-2BD38393704E}.wem"
+     },
+     {
       "Id": "630814504",
       "Language": "SFX",
       "Streaming": "false",
       "Location": "Memory",
       "ShortName": "Antorcha.wav",
       "CachePath": "19/{19509CA9-FCBC-BBE2-9CD2-9AFF978DA4D9}.wem"
-     },
-     {
-      "Id": "645331957",
-      "Language": "SFX",
-      "Streaming": "false",
-      "Location": "Memory",
-      "ShortName": "En la Cueva - Percu Stems Only.wav",
-      "CachePath": "07/{07048892-EDF9-510F-FB50-8C830F6BD5DB}.wem"
      },
      {
       "Id": "646408947",
@@ -320,10 +320,10 @@
       "DurationType": "Infinite",
       "MediaRefs": [
        {
-        "Id": "231961861"
+        "Id": "18361363"
        },
        {
-        "Id": "645331957"
+        "Id": "628543799"
        }
       ]
      },
@@ -520,6 +520,6 @@
     ]
    }
   ],
-  "FileHash": "{F3866233-5ECF-CBFF-3502-82F86BDBD69C}"
+  "FileHash": "{F70AC90A-1874-44E1-2F87-943A1EDA6102}"
  }
 }
