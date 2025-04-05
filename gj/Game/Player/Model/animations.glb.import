@@ -3,13 +3,13 @@
 importer="animation_library"
 importer_version=1
 type="AnimationLibrary"
-uid="uid://cwdjpjurlb12p"
-path="res://.godot/imported/run to stop.fbx-3d329f2d172a267f3795f159575b3d72.res"
+uid="uid://dwkl3w1n8govf"
+path="res://.godot/imported/animations.glb-7984387e08df1d468d5dd44a1394a4a4.res"
 
 [deps]
 
-source_file="res://Game/Player/Model/Animations/run to stop.fbx"
-dest_files=["res://.godot/imported/run to stop.fbx-3d329f2d172a267f3795f159575b3d72.res"]
+source_file="res://Game/Player/Model/animations.glb"
+dest_files=["res://.godot/imported/animations.glb-7984387e08df1d468d5dd44a1394a4a4.res"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1
