@@ -1,15 +1,15 @@
 [remap]
 
-importer="scene"
+importer="animation_library"
 importer_version=1
-type="PackedScene"
-uid="uid://cia6juta5fbf1"
-path="res://.godot/imported/PocahontasJumping.fbx-0fa80328e12f59501d1396b17d173f90.scn"
+type="AnimationLibrary"
+uid="uid://by3kf2wbsyvtn"
+path="res://.godot/imported/PocahontasFallBLoop.glb-cbf5775fd3dac4eda91e84be34a42db4.res"
 
 [deps]
 
-source_file="res://Game/Player/Animations/PocahontasJumping.fbx"
-dest_files=["res://.godot/imported/PocahontasJumping.fbx-0fa80328e12f59501d1396b17d173f90.scn"]
+source_file="res://Game/Player/Model/PocahontasFallBLoop.glb"
+dest_files=["res://.godot/imported/PocahontasFallBLoop.glb-cbf5775fd3dac4eda91e84be34a42db4.res"]
 
 [params]
 
@@ -28,11 +28,10 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=true
+animation/trimming=false
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-fbx/importer=0
-fbx/allow_geometry_helper_nodes=false
-fbx/embedded_image_handling=1
+gltf/naming_version=1
+gltf/embedded_image_handling=1
