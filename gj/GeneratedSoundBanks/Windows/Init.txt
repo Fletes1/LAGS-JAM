@@ -1,3 +1,10 @@
+State Group	ID	Name			Wwise Object Path	Notes
+	1730564739	Musica			\Default Work Unit\Musica	
+
+State	ID	Name	State Group			Notes
+	656779640	State_ON	Musica			
+	748895195	None	Musica			
+
 Game Parameter	ID	Name			Wwise Object Path	Notes
 	504532776	Brick			\Factory Acoustic Textures\Textures\Brick	
 	513139656	Mountain			\Factory Acoustic Textures\Textures\Mountain	
@@ -15,6 +22,7 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	4262522749	Wood_Bright			\Factory Acoustic Textures\Textures\Wood_Bright	
 
 Audio Bus	ID	Name			Wwise Object Path	Notes
+	1730564739	Musica			\Default Work Unit\Master Audio Bus\Musica	
 	2460606139	Espacial			\Default Work Unit\Master Audio Bus\Espacial	
 	2607556080	Menu			\Default Work Unit\Master Audio Bus\Menu	
 	3803692087	Master Audio Bus			\Default Work Unit\Master Audio Bus	

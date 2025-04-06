@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://54vngibdo3rg"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Iniciar_Juego"
+id = 1772340735
+guid = "{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}"
+dummy = true

@@ -2,16 +2,25 @@ class_name AK
 
 class EVENTS:
 
+	const INICIAR_JUEGO : int = 1772340735
 	const PLAY_AMBIENTE_CATACUMBA : int = 2655504731
 	const PLAY_ANTORCHA : int = 37813828
 	const PLAY_MOUSE_SOBRE_OPCIONES : int = 3236977634
+	const PLAY_MUSICA : int = 4237703276
 	const PLAY_OPCIONES_IN : int = 4057716190
 	const PLAY_OPCIONES_OFF : int = 1931507818
 	const PLAY_RATONES : int = 143414144
 	const PLAY_START : int = 2230670290
 
 class STATES:
-	pass
+
+	class MUSICA:
+		const GROUP : int = 1730564739
+	
+		class STATE:
+			const NONE : int = 748895195
+			const STATE_ON : int = 656779640
+
 
 class SWITCHES:
 	pass

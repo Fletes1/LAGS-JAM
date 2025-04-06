@@ -13,14 +13,31 @@ namespace AK
 {
     namespace EVENTS
     {
+        static const AkUniqueID INICIAR_JUEGO = 1772340735U;
         static const AkUniqueID PLAY_AMBIENTE_CATACUMBA = 2655504731U;
         static const AkUniqueID PLAY_ANTORCHA = 37813828U;
         static const AkUniqueID PLAY_MOUSE_SOBRE_OPCIONES = 3236977634U;
+        static const AkUniqueID PLAY_MUSICA = 4237703276U;
         static const AkUniqueID PLAY_OPCIONES_IN = 4057716190U;
         static const AkUniqueID PLAY_OPCIONES_OFF = 1931507818U;
         static const AkUniqueID PLAY_RATONES = 143414144U;
         static const AkUniqueID PLAY_START = 2230670290U;
     } // namespace EVENTS
+
+    namespace STATES
+    {
+        namespace MUSICA
+        {
+            static const AkUniqueID GROUP = 1730564739U;
+
+            namespace STATE
+            {
+                static const AkUniqueID NONE = 748895195U;
+                static const AkUniqueID STATE_ON = 656779640U;
+            } // namespace STATE
+        } // namespace MUSICA
+
+    } // namespace STATES
 
     namespace BANKS
     {
@@ -34,6 +51,7 @@ namespace AK
         static const AkUniqueID ESPACIAL = 2460606139U;
         static const AkUniqueID MASTER_AUDIO_BUS = 3803692087U;
         static const AkUniqueID MENU = 2607556080U;
+        static const AkUniqueID MUSICA = 1730564739U;
     } // namespace BUSSES
 
     namespace AUX_BUSSES

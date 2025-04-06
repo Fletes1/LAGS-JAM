@@ -10,11 +10,19 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{E0AB48AE-C427-BA22-9019-999495845F46}",
+    "Hash": "{DED47C13-63EC-B0E4-9D66-A86D9E44701B}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
     "Media": [
+     {
+      "Id": "18361363",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Percu Stems Only REVERB FINAL.wav",
+      "CachePath": "72/{722A27E9-8902-2CD9-CE64-A74FD82652B3}.wem"
+     },
      {
       "Id": "27534915",
       "Language": "SFX",
@@ -94,6 +102,14 @@
       "Location": "Memory",
       "ShortName": "Mouse_Sobre_Menu.wav",
       "CachePath": "DF/{DFEBE61F-D9B8-888F-A633-81E45667CCFB}.wem"
+     },
+     {
+      "Id": "628543799",
+      "Language": "SFX",
+      "Streaming": "false",
+      "Location": "Memory",
+      "ShortName": "En la Cueva - Stems sin Percu REVERB FINAL.wav",
+      "CachePath": "7C/{7CC24275-E4ED-0F84-353F-2BD38393704E}.wem"
      },
      {
       "Id": "630814504",
@@ -190,6 +206,29 @@
     },
     "Events": [
      {
+      "Id": "1772340735",
+      "Name": "Iniciar_Juego",
+      "ObjectPath": "\\Events\\Default Work Unit\\Iniciar_Juego",
+      "GUID": "{5ED033B7-62D5-4B23-A195-FCD61EA09C8A}",
+      "MaxAttenuation": "0",
+      "DurationType": "OneShot",
+      "DurationMin": "0",
+      "DurationMax": "0",
+      "MediaRefs": [
+       {
+        "Id": "599916585"
+       }
+      ],
+      "AuxBusRefs": [
+       {
+        "Id": "1031316333",
+        "Name": "Reverb_Menu",
+        "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
+        "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
+       }
+      ]
+     },
+     {
       "Id": "2655504731",
       "Name": "Play_Ambiente_Catacumba",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Ambiente_Catacumba",
@@ -270,6 +309,21 @@
         "Name": "Reverb_Menu",
         "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Reverb_Menu",
         "GUID": "{587DDA0A-D6C0-4C19-BD7E-4CF80857ADDA}"
+       }
+      ]
+     },
+     {
+      "Id": "4237703276",
+      "Name": "Play_Musica",
+      "ObjectPath": "\\Events\\Default Work Unit\\Play_Musica",
+      "GUID": "{86266E33-EC9F-4A4E-835C-9A961E8F629B}",
+      "DurationType": "Infinite",
+      "MediaRefs": [
+       {
+        "Id": "18361363"
+       },
+       {
+        "Id": "628543799"
        }
       ]
      },
@@ -384,6 +438,12 @@
     ],
     "Busses": [
      {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Musica",
+      "GUID": "{3039171D-D4E4-4AC3-B59F-F589B8D0E5D5}"
+     },
+     {
       "Id": "2460606139",
       "Name": "Espacial",
       "ObjectPath": "\\Master-Mixer Hierarchy\\Default Work Unit\\Master Audio Bus\\Espacial",
@@ -435,9 +495,31 @@
        ]
       }
      }
+    ],
+    "StateGroups": [
+     {
+      "Id": "1730564739",
+      "Name": "Musica",
+      "ObjectPath": "\\States\\Default Work Unit\\Musica",
+      "GUID": "{6089155E-165B-4E8A-9A7A-E150131E2451}",
+      "States": [
+       {
+        "Id": "656779640",
+        "Name": "State_ON",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\State_ON",
+        "GUID": "{B54DFDB8-80C1-49A9-83B6-4D7633C5F544}"
+       },
+       {
+        "Id": "748895195",
+        "Name": "None",
+        "ObjectPath": "\\States\\Default Work Unit\\Musica\\None",
+        "GUID": "{C37FB242-35C5-42B3-8290-5E8CFC7963E0}"
+       }
+      ]
+     }
     ]
    }
   ],
-  "FileHash": "{70B3C314-D1E6-6EF1-420B-B93AC6779AF4}"
+  "FileHash": "{F70AC90A-1874-44E1-2F87-943A1EDA6102}"
  }
 }
