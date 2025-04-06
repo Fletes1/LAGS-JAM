@@ -37,6 +37,7 @@ func physics_update(_delta: float) -> void:
 			makeSingleShot(-10);
 		refTime=0.0
 		noAction=true
+		objHook=null
 	pass
 
 func useRay(intersection:Dictionary):
@@ -45,6 +46,7 @@ func useRay(intersection:Dictionary):
 			var pos = intersection.position
 			contBody = intersection.collider
 			self.global_position = pos
+			
 	else:
 		self.global_position = Vector3.ZERO
 
@@ -75,22 +77,21 @@ func hookObjective():
 			pass
 		#Agarra el objet orecien seleccionado,
 		posHook=cursor.global_position
-		
 		#al igual que la posiicon original
 		firstPos= get_viewport().get_mouse_position() #Agarra el angulo iinicial de dondefue agarrrado en relacion con la pantalla "viewport" otnendiendo los datos en un vector 2D
+		print(get_viewport().get_mouse_position())
 		#agarra la ultima velocidad registradaa del mouse en un vector 2D, luego obtiene la longitud final de ese valor
 	
-	
+	#print(firstPos,get_viewport().get_mouse_position())
 	if (firstPos - get_viewport().get_mouse_position()).length() > head._limitRangeAct :
 		
 		var velImp = max(min(velMouse.length(),head._whipMaxImpulse),head._whipMinImpulse)
-		var angleDif = (Input.get_last_mouse_screen_velocity() - firstPos).angle_to(firstPos*-1) ##Obtiene el angulo entre la ultima posicion del mouse y el punto de origen
-		#
-		velMouse*=(1-(min(angleDif,90)/90))
-		if contBody.is_in_group("Enemigos"):#altera la velocidad pero no la direccion, para que se a mas facil apuntar al enemigo
-			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
-		else:#altera la direccion a la que va
-			objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
+		#var velImp = velMouse.length()
+		
+		#if contBody.is_in_group("Enemigos"):#altera la velocidad pero no la direccion, para que se a mas facil apuntar al enemigo
+			#objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
+		#else:#altera la direccion a la que va
+		objHook.emit_signal("applyImpulse",get_parent().position,posHook,velImp)
 		objHook=null
 		noAction = false
 	pass

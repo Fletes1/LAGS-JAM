@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c62x0blatd8l5"
-path="res://.godot/imported/Pocahontas_3DModel.fbx-07901eb3663d4e597f5e08c96fb015e2.scn"
+uid="uid://jx5n6f0meq1k"
+path="res://.godot/imported/PocahontasCrouchedWalking.fbx-99f0f98470d601624cd216fd8a77d674.scn"
 
 [deps]
 
-source_file="res://Game/Player/Model/Pocahontas_3DModel.fbx"
-dest_files=["res://.godot/imported/Pocahontas_3DModel.fbx-07901eb3663d4e597f5e08c96fb015e2.scn"]
+source_file="res://Game/Player/Animations/PocahontasCrouchedWalking.fbx"
+dest_files=["res://.godot/imported/PocahontasCrouchedWalking.fbx-99f0f98470d601624cd216fd8a77d674.scn"]
 
 [params]
 

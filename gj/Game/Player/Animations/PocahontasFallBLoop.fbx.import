@@ -1,15 +1,15 @@
 [remap]
 
-importer="animation_library"
+importer="scene"
 importer_version=1
-type="AnimationLibrary"
-uid="uid://co835l32jm5vf"
-path="res://.godot/imported/Animations.fbx-647f7b206e155a6e938ab56d50265031.res"
+type="PackedScene"
+uid="uid://c5qkjjfc13sad"
+path="res://.godot/imported/PocahontasFallBLoop.fbx-4dcebc0e6e59034e465fd9e3676c9bc6.scn"
 
 [deps]
 
-source_file="res://Game/Player/Model/Animations.fbx"
-dest_files=["res://.godot/imported/Animations.fbx-647f7b206e155a6e938ab56d50265031.res"]
+source_file="res://Game/Player/Animations/PocahontasFallBLoop.fbx"
+dest_files=["res://.godot/imported/PocahontasFallBLoop.fbx-4dcebc0e6e59034e465fd9e3676c9bc6.scn"]
 
 [params]
 
