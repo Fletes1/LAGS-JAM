@@ -1,0 +1,108 @@
+[gd_resource type="VisualShader" load_steps=13 format=3 uid="uid://dsxnoq775rh5l"]
+
+[ext_resource type="Texture2D" uid="uid://c3h5ot2pm7c0" path="res://Game/Levels/Main level/Texturas y shaders/Texturas/Suelo cueva.png" id="1_38wum"]
+[ext_resource type="Texture2D" uid="uid://csv4qqj15gn2p" path="res://Game/Levels/Main level/Texturas y shaders/Texturas/Pasto.png" id="2_s3dpc"]
+
+[sub_resource type="Gradient" id="Gradient_s3dpc"]
+offsets = PackedFloat32Array(0.193182, 0.840909)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_hxbjs"]
+fractal_octaves = 2
+fractal_lacunarity = 1.47
+fractal_gain = 0.195
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_r0ncw"]
+color_ramp = SubResource("Gradient_s3dpc")
+noise = SubResource("FastNoiseLite_hxbjs")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ih1o3"]
+texture = SubResource("NoiseTexture2D_r0ncw")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fvpch"]
+texture = ExtResource("1_38wum")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_f515r"]
+texture = ExtResource("1_38wum")
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_8f0vs"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 1.0, 2, 0.7]
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_t7wnl"]
+default_input_values = [1, Vector2(3, 3), 2, Vector2(0, 0)]
+function = 1
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_uoelt"]
+output_port_for_preview = 0
+default_input_values = [0, Quaternion(0, 0, 0, 0), 1, Quaternion(1, 1, 1, 1), 2, Quaternion(0.5, 0.5, 0.5, 1)]
+op_type = 5
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_t23y5"]
+texture = ExtResource("2_s3dpc")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_3;
+uniform sampler2D tex_frg_9;
+uniform sampler2D tex_frg_10;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// UVFunc:7
+	vec2 n_in7p1 = vec2(3.00000, 3.00000);
+	vec2 n_in7p2 = vec2(0.00000, 0.00000);
+	vec2 n_out7p0 = (UV - n_in7p2) * n_in7p1 + n_in7p2;
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, n_out7p0);
+
+
+// Mix:5
+	float n_in5p2 = 0.70000;
+	float n_out5p0 = mix(n_out2p0.x, n_out3p0.x, n_in5p2);
+
+
+// Texture2D:9
+	vec4 n_out9p0 = texture(tex_frg_9, n_out7p0);
+
+
+// Texture2D:10
+	vec4 n_out10p0 = texture(tex_frg_10, UV);
+
+
+// Mix:8
+	vec4 n_out8p0 = mix(vec4(n_out5p0), n_out9p0, n_out10p0);
+
+
+// Output:0
+	ALBEDO = vec3(n_out8p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-568.862, 274.539)
+nodes/fragment/0/position = Vector2(640, 40)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_fvpch")
+nodes/fragment/2/position = Vector2(-60, 100)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_f515r")
+nodes/fragment/3/position = Vector2(-60, -160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMix_8f0vs")
+nodes/fragment/5/position = Vector2(180, 240)
+nodes/fragment/7/node = SubResource("VisualShaderNodeUVFunc_t7wnl")
+nodes/fragment/7/position = Vector2(-540, 160)
+nodes/fragment/8/node = SubResource("VisualShaderNodeMix_uoelt")
+nodes/fragment/8/position = Vector2(400, 220)
+nodes/fragment/9/node = SubResource("VisualShaderNodeTexture_t23y5")
+nodes/fragment/9/position = Vector2(-280, 260)
+nodes/fragment/10/node = SubResource("VisualShaderNodeTexture_ih1o3")
+nodes/fragment/10/position = Vector2(-160, 540)
+nodes/fragment/connections = PackedInt32Array(7, 0, 3, 0, 3, 0, 5, 1, 2, 0, 5, 0, 8, 0, 0, 0, 10, 0, 8, 2, 5, 0, 8, 0, 9, 0, 8, 1, 7, 0, 9, 0)

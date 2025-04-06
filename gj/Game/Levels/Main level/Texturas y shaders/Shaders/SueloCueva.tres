@@ -1,0 +1,63 @@
+[gd_resource type="VisualShader" load_steps=6 format=3 uid="uid://r0spb2cinprw"]
+
+[ext_resource type="Texture2D" uid="uid://c3h5ot2pm7c0" path="res://Game/Levels/Main level/Texturas y shaders/Texturas/Suelo cueva.png" id="1_5i5h2"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_fvpch"]
+texture = ExtResource("1_5i5h2")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_f515r"]
+texture = ExtResource("1_5i5h2")
+
+[sub_resource type="VisualShaderNodeMix" id="VisualShaderNodeMix_8f0vs"]
+output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 1.0, 2, 0.7]
+
+[sub_resource type="VisualShaderNodeUVFunc" id="VisualShaderNodeUVFunc_t7wnl"]
+default_input_values = [1, Vector2(3, 3), 2, Vector2(0, 0)]
+function = 1
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_3;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// UVFunc:7
+	vec2 n_in7p1 = vec2(3.00000, 3.00000);
+	vec2 n_in7p2 = vec2(0.00000, 0.00000);
+	vec2 n_out7p0 = (UV - n_in7p2) * n_in7p1 + n_in7p2;
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, n_out7p0);
+
+
+// Mix:5
+	float n_in5p2 = 0.70000;
+	float n_out5p0 = mix(n_out2p0.x, n_out3p0.x, n_in5p2);
+
+
+// Output:0
+	ALBEDO = vec3(n_out5p0);
+
+
+}
+"
+graph_offset = Vector2(-292.616, -148.668)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_fvpch")
+nodes/fragment/2/position = Vector2(-60, 100)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_f515r")
+nodes/fragment/3/position = Vector2(-60, -160)
+nodes/fragment/5/node = SubResource("VisualShaderNodeMix_8f0vs")
+nodes/fragment/5/position = Vector2(180, 240)
+nodes/fragment/7/node = SubResource("VisualShaderNodeUVFunc_t7wnl")
+nodes/fragment/7/position = Vector2(-300, -20)
+nodes/fragment/connections = PackedInt32Array(7, 0, 3, 0, 3, 0, 5, 1, 2, 0, 5, 0, 5, 0, 0, 0)
