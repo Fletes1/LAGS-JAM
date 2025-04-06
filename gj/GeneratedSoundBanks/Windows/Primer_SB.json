@@ -10,7 +10,7 @@
     "Type": "User",
     "GUID": "{85E4012B-0380-4A96-83FF-FD147D5AE1B7}",
     "Language": "SFX",
-    "Hash": "{DED47C13-63EC-B0E4-9D66-A86D9E44701B}",
+    "Hash": "{3A4B3E26-4F17-530B-6DF4-8576D8AD8F8A}",
     "ObjectPath": "\\SoundBanks\\Default Work Unit\\Primer_SB",
     "ShortName": "Primer_SB",
     "Path": "Primer_SB.bnk",
@@ -265,7 +265,6 @@
       "Name": "Play_Antorcha",
       "ObjectPath": "\\Events\\Default Work Unit\\Play_Antorcha",
       "GUID": "{B728D88A-6EFC-4BA3-872E-4E068038CB08}",
-      "MaxAttenuation": "20",
       "DurationType": "Infinite",
       "MediaRefs": [
        {
@@ -520,6 +519,6 @@
     ]
    }
   ],
-  "FileHash": "{F70AC90A-1874-44E1-2F87-943A1EDA6102}"
+  "FileHash": "{90830D59-A631-FDAD-466E-5ABDACF9AA5F}"
  }
 }

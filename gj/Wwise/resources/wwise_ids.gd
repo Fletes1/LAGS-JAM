@@ -37,8 +37,8 @@ class BANKS:
 
 class AUX_BUSSES:
 
-	const CATACUMBA : int = 1182336810
 	const REVERB_MENU : int = 1031316333
+	const CATACUMBA : int = 1182336810
 
 class ACOUSTIC_TEXTURES:
 

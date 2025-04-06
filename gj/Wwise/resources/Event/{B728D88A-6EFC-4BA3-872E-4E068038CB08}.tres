@@ -1,0 +1,8 @@
+[gd_resource type="WwiseEvent" format=3 uid="uid://byjcd0oqs48a3"]
+
+[resource]
+is_in_user_defined_sound_bank = true
+name = "Play_Antorcha"
+id = 37813828
+guid = "{B728D88A-6EFC-4BA3-872E-4E068038CB08}"
+dummy = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://c1gews85h6vnf"]
+[gd_scene load_steps=9 format=3 uid="uid://c1gews85h6vnf"]
 
 [ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="1_m0dl4"]
 [ext_resource type="WwiseEvent" uid="uid://bpvadu1o01obd" path="res://Wwise/resources/Event/{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}.tres" id="2_7fif7"]
@@ -6,6 +6,7 @@
 [ext_resource type="WwiseEvent" uid="uid://ddcndhhdmt7du" path="res://Wwise/resources/Event/{86266E33-EC9F-4A4E-835C-9A961E8F629B}.tres" id="4_1p3u6"]
 [ext_resource type="PackedScene" uid="uid://2qsp2abjnika" path="res://Game/Levels/Main level/level.tscn" id="5_kd2yy"]
 [ext_resource type="PackedScene" uid="uid://cvx2d0nsis120" path="res://Game/Player/Player.tscn" id="6_xja8t"]
+[ext_resource type="WwiseEvent" uid="uid://byjcd0oqs48a3" path="res://Wwise/resources/Event/{B728D88A-6EFC-4BA3-872E-4E068038CB08}.tres" id="7_7fif7"]
 
 [sub_resource type="Environment" id="Environment_nknxj"]
 background_mode = 1
@@ -44,5 +45,9 @@ trigger_on = 1
 [node name="Player" parent="." instance=ExtResource("6_xja8t")]
 
 [node name="AkListener3D" type="AkListener3D" parent="Player"]
+
+[node name="Antorchas" type="AkEvent2D" parent="."]
+event = ExtResource("7_7fif7")
+trigger_on = 1
 
 [editable path="Player"]
