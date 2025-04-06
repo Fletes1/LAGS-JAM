@@ -29,4 +29,3 @@ transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.79
 [node name="Mazmorra-p2" parent="." instance=ExtResource("4_6ef32")]
 
 [node name="Player" parent="." instance=ExtResource("9_2y5qt")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0814654, 0)

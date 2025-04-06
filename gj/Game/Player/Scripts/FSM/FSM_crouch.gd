@@ -24,7 +24,12 @@ func exit():
 
 func physics_update(_delta: float):
 	if !Input.is_action_pressed("crouch"):
-		self.emit_signal("transition",self,"walking")
+		if Input.get_vector("ui_left","ui_right","ui_up","ui_down") and Input.is_action_just_pressed("run"):
+			self.emit_signal("transition",self,"runing")
+		elif Input.get_vector("ui_left","ui_right","ui_up","ui_down"):
+			self.emit_signal("transition",self,"walking")
+		else:
+			self.emit_signal("transition",self,"IDLE")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
