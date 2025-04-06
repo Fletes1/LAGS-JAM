@@ -1,0 +1,42 @@
+[gd_resource type="VisualShader" load_steps=5 format=3 uid="uid://0y3qxnjif8bh"]
+
+[ext_resource type="Texture2D" uid="uid://c17f0n7q41wri" path="res://Game/Player/Textures/Headfeatures_low_PocahontasHeadFeatures_Diffuse_ACES - ACEScg.png" id="1_rcqik"]
+[ext_resource type="Texture2D" uid="uid://bma45y68dc0lq" path="res://Game/Player/Textures/Headfeatures_low_PocahontasHeadFeatures_Glossiness_Utility - Raw.png" id="2_ah5kg"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_h85dg"]
+texture = ExtResource("1_rcqik")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_m2c2t"]
+texture = ExtResource("2_ah5kg")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_3;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	ROUGHNESS = n_out3p0.x;
+
+
+}
+"
+graph_offset = Vector2(-66.4752, 112.998)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_h85dg")
+nodes/fragment/2/position = Vector2(-120, 20)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_m2c2t")
+nodes/fragment/3/position = Vector2(-120, 340)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 0, 3)

@@ -1,0 +1,30 @@
+[gd_resource type="VisualShader" load_steps=3 format=3 uid="uid://dqumts1noupmj"]
+
+[ext_resource type="Texture2D" uid="uid://smpum2p0y6e5" path="res://Game/Levels/Niveles/Texturas y shaders/Texturas/Paredes cueva.png" id="1_gp0he"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_8fiqt"]
+texture = ExtResource("1_gp0he")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(127.434, 150.521)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_8fiqt")
+nodes/fragment/2/position = Vector2(164.533, 223.73)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0)

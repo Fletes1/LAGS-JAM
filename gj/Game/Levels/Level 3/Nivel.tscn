@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://2qsp2abjnika"]
+
+[ext_resource type="PackedScene" uid="uid://dpo60wkfemepu" path="res://Game/Levels/Niveles/Modelos/Cuevasn.tscn" id="2_3mvki"]
+[ext_resource type="PackedScene" uid="uid://c6l1ti08cakfc" path="res://Game/Levels/Niveles/Modelos/Mazmorra-p1n.tscn" id="3_63bm6"]
+[ext_resource type="PackedScene" uid="uid://b7fkj2r6g5puy" path="res://Game/Levels/Niveles/Modelos/Mazmorra-p2.tscn" id="4_6ef32"]
+[ext_resource type="PackedScene" uid="uid://cvx2d0nsis120" path="res://Game/Player/Player.tscn" id="9_2y5qt"]
+
+[sub_resource type="Environment" id="Environment_cbjed"]
+background_mode = 1
+background_color = Color(0.386757, 0.386757, 0.386756, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.617456, 0.617454, 0.617454, 1)
+ambient_light_energy = 1.68
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_cbjed")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.799224, 0.680545, -0.482975, 0.550993, 0, 18.1874, 0)
+
+[node name="Player" parent="." instance=ExtResource("9_2y5qt")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 469.588, 34.0787, 140.092)
+
+[node name="Coliciones" type="Node" parent="."]
+
+[node name="Cuevas" parent="." instance=ExtResource("2_3mvki")]
+
+[node name="Mazmorra-p1" parent="." instance=ExtResource("3_63bm6")]
+
+[node name="Mazmorra-p2" parent="." instance=ExtResource("4_6ef32")]
