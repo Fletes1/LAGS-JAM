@@ -1,6 +1,6 @@
 extends State
 
-
+@onready var animation = $"../../Model3D/AnimationPlayer"
 @onready var head : Node3D
 var baseValues : Dictionary
 
@@ -9,7 +9,7 @@ func _ready() -> void:
 	head=get_parent().get_parent()
 	baseValues["speed"]=head.speed
 	baseValues["jump"]=head.jump
-	
+	#animation.play("cooling")
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 	

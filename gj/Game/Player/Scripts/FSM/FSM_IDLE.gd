@@ -2,7 +2,7 @@ extends State
 
 @onready var head : Node3D
 var baseValues : Dictionary
-
+@onready var animation = $"../../Model3D/AnimationPlayer"
 
 var timeRef := 0.0
 func _ready() -> void:
@@ -16,6 +16,7 @@ func _ready() -> void:
 func enter():
 	head.speed = baseValues.speed
 	head.jump = baseValues.jump
+	animation.play("idle")
 	
 	pass
 
