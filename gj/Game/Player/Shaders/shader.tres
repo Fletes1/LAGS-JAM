@@ -1,21 +1,21 @@
-[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://cq0gkeicac58s"]
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://bd43vh7c2e4s0"]
 
-[ext_resource type="Texture2D" uid="uid://duv7ogrg33gdq" path="res://Game/Player/Pocahontas_low_PocahontasTx_Diffuse_ACES - ACEScg.png" id="1_78rrv"]
-[ext_resource type="Texture2D" uid="uid://b8rj7qd4mlj8n" path="res://Game/Player/Pocahontas_low_PocahontasTx_Normal_Utility - Raw.png" id="2_prmlp"]
-[ext_resource type="Texture2D" uid="uid://csm3pwsg6tk2s" path="res://Game/Player/Pocahontas_low_PocahontasTx_Metallic_Utility - Raw.png" id="3_dw0m0"]
-[ext_resource type="Texture2D" uid="uid://bu3rrnely0uyn" path="res://Game/Player/Pocahontas_low_PocahontasTx_Glossiness_Utility - Raw.png" id="4_yg6cr"]
+[ext_resource type="Texture2D" uid="uid://7hixtfvjmhlh" path="res://Game/Player/Textures/Pocahontas_low_PocahontasTx_Diffuse_ACES - ACEScg.png" id="1_nstv4"]
+[ext_resource type="Texture2D" uid="uid://chftoq5ma6tfb" path="res://Game/Player/Textures/Pocahontas_low_PocahontasTx_Normal_Utility - Raw.png" id="2_b8fek"]
+[ext_resource type="Texture2D" uid="uid://b1nq2x5wb7474" path="res://Game/Player/Textures/Pocahontas_low_PocahontasTx_Metallic_Utility - Raw.png" id="3_sv0yx"]
+[ext_resource type="Texture2D" uid="uid://f8bxwxbnucgh" path="res://Game/Player/Textures/Pocahontas_low_PocahontasTx_Glossiness_Utility - Raw.png" id="4_hmnap"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5p7pu"]
-texture = ExtResource("1_78rrv")
+texture = ExtResource("1_nstv4")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_atorj"]
-texture = ExtResource("2_prmlp")
+texture = ExtResource("2_b8fek")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ngyus"]
-texture = ExtResource("3_dw0m0")
+texture = ExtResource("3_sv0yx")
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rofkc"]
-texture = ExtResource("4_yg6cr")
+texture = ExtResource("4_hmnap")
 
 [resource]
 code = "shader_type spatial;
@@ -54,7 +54,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(-290.43, -33.7757)
+graph_offset = Vector2(-214.8, 44.3056)
 nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_5p7pu")
 nodes/fragment/2/position = Vector2(0, 220)
 nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_atorj")
