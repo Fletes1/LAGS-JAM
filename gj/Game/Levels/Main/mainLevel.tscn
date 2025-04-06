@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1gews85h6vnf"]
+
+[ext_resource type="WwiseBank" uid="uid://wgjg1avmt7ed" path="res://Wwise/resources/SoundBank/{85E4012B-0380-4A96-83FF-FD147D5AE1B7}.tres" id="1_m0dl4"]
+[ext_resource type="WwiseEvent" uid="uid://bpvadu1o01obd" path="res://Wwise/resources/Event/{22FDE3C8-02C0-4BB8-8525-39B11D0571FA}.tres" id="2_7fif7"]
+[ext_resource type="WwiseEvent" uid="uid://dg2r1mbwwqs1k" path="res://Wwise/resources/Event/{84F8D0FB-FFF1-4449-8675-749F73F1711C}.tres" id="3_l53pj"]
+[ext_resource type="WwiseEvent" uid="uid://ddcndhhdmt7du" path="res://Wwise/resources/Event/{86266E33-EC9F-4A4E-835C-9A961E8F629B}.tres" id="4_1p3u6"]
+[ext_resource type="PackedScene" uid="uid://2qsp2abjnika" path="res://Game/Levels/Main level/level.tscn" id="5_kd2yy"]
+[ext_resource type="PackedScene" uid="uid://cvx2d0nsis120" path="res://Game/Player/Player.tscn" id="6_xja8t"]
+
+[sub_resource type="Environment" id="Environment_nknxj"]
+background_mode = 1
+background_color = Color(0.386757, 0.386757, 0.386756, 1)
+ambient_light_source = 2
+ambient_light_color = Color(0.617456, 0.617454, 0.617454, 1)
+ambient_light_energy = 1.68
+
+[node name="NivelPrueva" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_nknxj")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
+transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.799224, 0.680545, -0.482975, 0.550993, 0, 18.1874, 0)
+
+[node name="AkBank" type="AkBank" parent="."]
+bank = ExtResource("1_m0dl4")
+load_on = 1
+
+[node name="Ratones" type="AkEvent2D" parent="."]
+event = ExtResource("2_7fif7")
+trigger_on = 1
+
+[node name="Ambientes" type="AkEvent2D" parent="."]
+event = ExtResource("3_l53pj")
+trigger_on = 1
+
+[node name="Musica" type="AkEvent2D" parent="."]
+event = ExtResource("4_1p3u6")
+trigger_on = 1
+
+[node name="Node3D" parent="." instance=ExtResource("5_kd2yy")]
+
+[node name="Player" parent="." instance=ExtResource("6_xja8t")]
+
+[node name="AkListener3D" type="AkListener3D" parent="Player"]
+
+[editable path="Player"]

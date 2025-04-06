@@ -27,15 +27,11 @@ func exit():
 
 func physics_update(_delta: float):
 	
-	if Input.get_vector("ui_left","ui_right","ui_up","ui_down") and Input.is_action_just_pressed("run"):
+	if Input.get_vector("ui_left","ui_right","ui_up","ui_down") and Input.is_action_pressed("run"):
 		self.emit_signal("transition",self,"runing")
 	elif Input.get_vector("ui_left","ui_right","ui_up","ui_down"):
 		self.emit_signal("transition",self,"walking")
-		
-	if Input.is_action_pressed("crouch"):
-		self.emit_signal("transition",self,"on_crouch")
-	if !head.onGround and head.linear_velocity.y > 0:
-		self.emit_signal("transition",self,"going_up")
-	elif !head.onGround and head.linear_velocity.y < 0:
-		self.emit_signal("transition",self,"falling")
+
+	if !head.onGround:
+		self.emit_signal("transition",self,"ON_AIR")
 	pass
