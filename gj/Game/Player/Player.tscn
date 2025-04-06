@@ -116,6 +116,5 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07673, 0.061127)
 shape = SubResource("SphereShape3D_hf5e6")
 
 [node name="Model3D" parent="." instance=ExtResource("11_e0asf")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0709174)
 
 [connection signal="applyImpulse" from="." to="." method="_on_apply_impulse"]
