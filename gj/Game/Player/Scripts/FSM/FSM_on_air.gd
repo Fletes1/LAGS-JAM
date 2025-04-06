@@ -1,5 +1,6 @@
 extends State
 
+@onready var animation = $"../../Model3D/AnimationPlayer"
 @onready var head : Node3D
 var baseValues : Dictionary
 
@@ -13,7 +14,7 @@ func _ready() -> void:
 func enter():
 	head.speed = baseValues.speed
 	head.freeMove = true
-	
+	animation.play("fallingB")
 	pass
 	
 func exit():
@@ -27,8 +28,8 @@ func physics_update(_delta: float):
 			self.emit_signal("transition",self,"runing")
 		elif Input.get_vector("ui_left","ui_right","ui_up","ui_down"):
 			self.emit_signal("transition",self,"walking")
-		elif Input.get_vector("ui_left","ui_right","ui_up","ui_down"):
-			pass
+		elif !Input.get_vector("ui_left","ui_right","ui_up","ui_down"):
+			self.emit_signal("transition",self,"idle")
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

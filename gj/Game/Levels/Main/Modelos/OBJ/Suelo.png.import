@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://iomexovh0ci2"
-path.s3tc="res://.godot/imported/Suelo.png-721b1d207a220b4ce39efd02a9e0e485.s3tc.ctex"
+path.s3tc="res://.godot/imported/Suelo.png-b61e67ab39a2cecf43b5778ec8717ee5.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Game/Levels/Pruevas/Modelos/OBJ/Suelo.png"
-dest_files=["res://.godot/imported/Suelo.png-721b1d207a220b4ce39efd02a9e0e485.s3tc.ctex"]
+source_file="res://Game/Levels/Main/Modelos/OBJ/Suelo.png"
+dest_files=["res://.godot/imported/Suelo.png-b61e67ab39a2cecf43b5778ec8717ee5.s3tc.ctex"]
 
 [params]
 
