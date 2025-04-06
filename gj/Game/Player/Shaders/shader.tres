@@ -1,0 +1,66 @@
+[gd_resource type="VisualShader" load_steps=9 format=3 uid="uid://cq0gkeicac58s"]
+
+[ext_resource type="Texture2D" uid="uid://duv7ogrg33gdq" path="res://Game/Player/Pocahontas_low_PocahontasTx_Diffuse_ACES - ACEScg.png" id="1_78rrv"]
+[ext_resource type="Texture2D" uid="uid://b8rj7qd4mlj8n" path="res://Game/Player/Pocahontas_low_PocahontasTx_Normal_Utility - Raw.png" id="2_prmlp"]
+[ext_resource type="Texture2D" uid="uid://csm3pwsg6tk2s" path="res://Game/Player/Pocahontas_low_PocahontasTx_Metallic_Utility - Raw.png" id="3_dw0m0"]
+[ext_resource type="Texture2D" uid="uid://bu3rrnely0uyn" path="res://Game/Player/Pocahontas_low_PocahontasTx_Glossiness_Utility - Raw.png" id="4_yg6cr"]
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_5p7pu"]
+texture = ExtResource("1_78rrv")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_atorj"]
+texture = ExtResource("2_prmlp")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_ngyus"]
+texture = ExtResource("3_dw0m0")
+
+[sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_rofkc"]
+texture = ExtResource("4_yg6cr")
+
+[resource]
+code = "shader_type spatial;
+render_mode blend_mix, depth_draw_opaque, cull_back, diffuse_lambert, specular_schlick_ggx;
+
+uniform sampler2D tex_frg_2;
+uniform sampler2D tex_frg_4;
+uniform sampler2D tex_frg_5;
+uniform sampler2D tex_frg_3;
+
+
+
+void fragment() {
+// Texture2D:2
+	vec4 n_out2p0 = texture(tex_frg_2, UV);
+
+
+// Texture2D:4
+	vec4 n_out4p0 = texture(tex_frg_4, UV);
+
+
+// Texture2D:5
+	vec4 n_out5p0 = texture(tex_frg_5, UV);
+
+
+// Texture2D:3
+	vec4 n_out3p0 = texture(tex_frg_3, UV);
+
+
+// Output:0
+	ALBEDO = vec3(n_out2p0.xyz);
+	METALLIC = n_out4p0.x;
+	ROUGHNESS = n_out5p0.x;
+	NORMAL_MAP = vec3(n_out3p0.xyz);
+
+
+}
+"
+graph_offset = Vector2(-290.43, -33.7757)
+nodes/fragment/2/node = SubResource("VisualShaderNodeTexture_5p7pu")
+nodes/fragment/2/position = Vector2(0, 220)
+nodes/fragment/3/node = SubResource("VisualShaderNodeTexture_atorj")
+nodes/fragment/3/position = Vector2(-60, 540)
+nodes/fragment/4/node = SubResource("VisualShaderNodeTexture_ngyus")
+nodes/fragment/4/position = Vector2(-320, 340)
+nodes/fragment/5/node = SubResource("VisualShaderNodeTexture_rofkc")
+nodes/fragment/5/position = Vector2(-320, 100)
+nodes/fragment/connections = PackedInt32Array(2, 0, 0, 0, 3, 0, 0, 9, 4, 0, 0, 2, 5, 0, 0, 3)
