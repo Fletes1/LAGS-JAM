@@ -4,7 +4,7 @@ extends Control
 #region 
 
 func Comenzar_nivel() -> void:
-	get_tree().change_scene_to_file("res://Game/Levels/Escenas/nivel_prueva.tscn")
+	get_tree().change_scene_to_file("res://Game/Levels/Main/mainLevel.tscn")
 	pass # Replace with function body.
 
 func Opciones() -> void:

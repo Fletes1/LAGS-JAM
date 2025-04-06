@@ -9,7 +9,6 @@
 
 [sub_resource type="Environment" id="Environment_nknxj"]
 background_mode = 1
-background_color = Color(0.386757, 0.386757, 0.386756, 1)
 ambient_light_source = 2
 ambient_light_color = Color(0.617456, 0.617454, 0.617454, 1)
 ambient_light_energy = 1.68
@@ -21,6 +20,8 @@ environment = SubResource("Environment_nknxj")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="WorldEnvironment"]
 transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.799224, 0.680545, -0.482975, 0.550993, 0, 18.1874, 0)
+light_color = Color(0.393086, 0.393086, 0.393085, 1)
+shadow_enabled = true
 
 [node name="AkBank" type="AkBank" parent="."]
 bank = ExtResource("1_m0dl4")
