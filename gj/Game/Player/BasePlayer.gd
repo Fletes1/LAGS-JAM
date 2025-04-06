@@ -22,6 +22,7 @@ signal applyImpulse
 @export var _whipDeathZone = 100 ##que tan lejos debe ir el mouse para detectarlo, (Similar a la zona muerta de un joystcik)
 @export var _crouchEffect = 0.5
 @export var _runEffect = 1.5
+@export var _limitRangeAct = 20
 
 var freeMove : bool
 var onGround : bool
@@ -45,7 +46,7 @@ func indpendentMove(_delta:float):
 	if Input.is_action_pressed("rotate_L"):
 		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
 	elif Input.is_action_pressed("rotate_R"):
-		pivot.rotate_object_local(Vector3(0,1,0),_velRotCam*_delta)
+		pivot.rotate_object_local(Vector3(0,1,0),-_velRotCam*_delta)
 	pivot.global_position=global_position
 	if detGround.is_colliding():
 		onGround=true

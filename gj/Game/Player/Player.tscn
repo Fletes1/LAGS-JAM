@@ -899,7 +899,6 @@ _data = {
 }
 
 [node name="Player" type="RigidBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.0164893)
 axis_lock_angular_x = true
 axis_lock_angular_y = true
 axis_lock_angular_z = true
