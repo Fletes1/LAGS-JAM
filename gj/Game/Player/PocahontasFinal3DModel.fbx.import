@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://c5qkjjfc13sad"
-path="res://.godot/imported/PocahontasFallBLoop.fbx-4dcebc0e6e59034e465fd9e3676c9bc6.scn"
+uid="uid://cibyckx8fdlic"
+path="res://.godot/imported/PocahontasFinal3DModel.fbx-89f41f79f5c8c0052ed7b3440506d9a7.scn"
 
 [deps]
 
-source_file="res://Game/Player/Animations/PocahontasFallBLoop.fbx"
-dest_files=["res://.godot/imported/PocahontasFallBLoop.fbx-4dcebc0e6e59034e465fd9e3676c9bc6.scn"]
+source_file="res://Game/Player/PocahontasFinal3DModel.fbx"
+dest_files=["res://.godot/imported/PocahontasFinal3DModel.fbx-89f41f79f5c8c0052ed7b3440506d9a7.scn"]
 
 [params]
 

@@ -66,4 +66,4 @@ environment = SubResource("Environment_fpth2")
 transform = Transform3D(0.683561, 0.689273, -0.240098, -0.263823, 0.540035, 0.799224, 0.680545, -0.482975, 0.550993, 0, 18.1874, 0)
 
 [node name="Player" parent="." instance=ExtResource("5_tf032")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52674, 1.37979, 6.45172)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -9.52674, 5.69027, 6.45172)
