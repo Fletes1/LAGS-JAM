@@ -113,6 +113,10 @@ jump={
 ]
 }
 
+[physics]
+
+3d/physics_engine="Jolt Physics"
+
 [wwise]
 
 common_user_settings/root_output_path="res://GeneratedSoundBanks"
